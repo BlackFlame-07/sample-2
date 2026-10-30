@@ -1,4 +1,4 @@
-/* Aveline Interactive Motion & State Engine */
+/* Nordesthetics Bespoke Interactive Motion & State Engine */
 (function() {
   'use strict';
   
@@ -54,11 +54,10 @@
       var track = ticker.firstElementChild;
       if (!track) return;
       var currentX = 0;
-      var speed = 0.75; // px per frame
+      var speed = 0.75;
       track.style.display = 'flex';
       track.style.willChange = 'transform';
       
-      // Clone track children once to ensure seamless loop
       if (track.children.length > 0 && !track.getAttribute('data-cloned')) {
         track.setAttribute('data-cloned', 'true');
         var originalChildren = Array.from(track.children);
@@ -79,38 +78,135 @@
       requestAnimationFrame(step);
     });
 
-    // 4. Replay Captured Framer Click Variants (FAQs, Pricing Toggles, Tabs)
-    window.__AVELINE_CLICK_STATES__ = [{"triggerId": "fn-115", "containerId": "fn-114", "stateA": "<button class=\"framer-YskcA framer-10dl2bh framer-v-1kzdtc3\" data-border=\"true\" data-framer-name=\"Ghost\" data-highlight=\"true\" data-reset=\"button\" tabindex=\"0\" style=\"--border-bottom-width: 1px; --border-color: rgba(255, 255, 255, 0.3); --border-left-width: 1px; --border-right-width: 1px; --border-style: solid; --border-top-width: 1px; background-color: rgba(0, 0, 0, 0); border-radius: 999px; opacity: 1;\" data-settled-opacity=\"1\" data-f-id=\"fn-115\"><svg class=\"framer-4rnSx framer-thf8b8\" role=\"presentation\" viewBox=\"0 0 24 24\" style=\"--1m973uw: rgb(255, 255, 255); --js9iwy: 1.6; opacity: 1;\" data-settled-opacity=\"1\" data-f-id=\"fn-116\"><use href=\"#3938257237\" data-settled-opacity=\"1\" data-f-id=\"fn-117\"></use></svg></button>", "stateB": "<button class=\"framer-YskcA framer-10dl2bh framer-v-1kzdtc3 hover\" data-border=\"true\" data-highlight=\"true\" data-reset=\"button\" tabindex=\"0\" style=\"--border-bottom-width: 1px; --border-color: rgb(255, 255, 255); --border-left-width: 1px; --border-right-width: 1px; --border-style: solid; --border-top-width: 1px; background-color: rgba(255, 255, 255, 0.12); border-radius: 999px; opacity: 1; will-change: auto;\" data-settled-opacity=\"1\" data-f-id=\"fn-115\"><svg class=\"framer-4rnSx framer-thf8b8\" role=\"presentation\" viewBox=\"0 0 24 24\" style=\"--1m973uw: rgb(255, 255, 255); --js9iwy: 1.6; opacity: 1;\" data-settled-opacity=\"1\" data-f-id=\"fn-116\"><use href=\"#3938257237\" data-settled-opacity=\"1\" data-f-id=\"fn-117\"></use></svg></button>"}, {"triggerId": "fn-130", "containerId": "fn-129", "stateA": "<button class=\"framer-YskcA framer-10dl2bh framer-v-1kzdtc3\" data-border=\"true\" data-framer-name=\"Ghost\" data-highlight=\"true\" data-reset=\"button\" tabindex=\"0\" style=\"--border-bottom-width: 1px; --border-color: rgba(255, 255, 255, 0.3); --border-left-width: 1px; --border-right-width: 1px; --border-style: solid; --border-top-width: 1px; background-color: rgba(0, 0, 0, 0); border-radius: 999px; opacity: 1;\" data-settled-opacity=\"1\" data-f-id=\"fn-130\"><svg class=\"framer-ab47M framer-thf8b8\" role=\"presentation\" viewBox=\"0 0 24 24\" style=\"--1m973uw: rgb(255, 255, 255); --js9iwy: 1.6; opacity: 1;\" data-settled-opacity=\"1\" data-f-id=\"fn-131\"><use href=\"#2903821725\" data-settled-opacity=\"1\" data-f-id=\"fn-132\"></use></svg></button>", "stateB": "<button class=\"framer-YskcA framer-10dl2bh framer-v-1kzdtc3 hover\" data-border=\"true\" data-highlight=\"true\" data-reset=\"button\" tabindex=\"0\" style=\"--border-bottom-width: 1px; --border-color: rgb(255, 255, 255); --border-left-width: 1px; --border-right-width: 1px; --border-style: solid; --border-top-width: 1px; background-color: rgba(255, 255, 255, 0.12); border-radius: 999px; opacity: 1; will-change: auto;\" data-settled-opacity=\"1\" data-f-id=\"fn-130\"><svg class=\"framer-ab47M framer-thf8b8\" role=\"presentation\" viewBox=\"0 0 24 24\" style=\"--1m973uw: rgb(255, 255, 255); --js9iwy: 1.6; opacity: 1;\" data-settled-opacity=\"1\" data-f-id=\"fn-131\"><use href=\"#2903821725\" data-settled-opacity=\"1\" data-f-id=\"fn-132\"></use></svg></button>"}];
-    if (window.__AVELINE_CLICK_STATES__ && window.__AVELINE_CLICK_STATES__.length > 0) {
-      window.__AVELINE_CLICK_STATES__.forEach(function(item) {
-        var toggled = false;
-        document.addEventListener('click', function(e) {
-          var trigger = e.target.closest('[data-f-id="' + item.triggerId + '"]');
-          if (!trigger) return;
-          var container = document.querySelector('[data-f-id="' + item.containerId + '"]');
-          if (!container) return;
+    // 4. Smooth Anchor Scrolling for ALL Internal Buttons & Links
+    document.addEventListener('click', function(e) {
+      var link = e.target.closest('a[href^="#"]');
+      if (!link) return;
+      var href = link.getAttribute('href');
+      if (!href || href === '#') return;
+      var targetId = href.slice(1);
+      var targetEl = document.getElementById(targetId) || document.querySelector('[data-framer-name="' + targetId + '"]');
+      if (targetEl) {
+        e.preventDefault();
+        targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
 
-          e.preventDefault();
-          toggled = !toggled;
-          if (document.startViewTransition) {
-            // Uses Chromium View Transitions API for silky layout morphing between states
-            document.startViewTransition(function() {
-              container.innerHTML = toggled ? item.stateB : item.stateA;
-            });
-          } else {
-            container.innerHTML = toggled ? item.stateB : item.stateA;
-          }
+    // 5. Interactive FAQ Accordion Logic
+    document.querySelectorAll('.framer-CNui5, [data-framer-name="Question"]').forEach(function(btn) {
+      btn.addEventListener('click', function(e) {
+        var card = btn.closest('.framer-CNui5') || btn.parentElement;
+        if (!card) return;
+        e.preventDefault();
+        var isOpen = card.classList.contains('framer-v-wtjozs');
+        if (isOpen) {
+          card.classList.remove('framer-v-wtjozs');
+          card.classList.add('framer-v-1fsuiv0');
+        } else {
+          // Accordion toggle
+          document.querySelectorAll('.framer-CNui5').forEach(function(c) {
+            c.classList.remove('framer-v-wtjozs');
+            c.classList.add('framer-v-1fsuiv0');
+          });
+          card.classList.remove('framer-v-1fsuiv0');
+          card.classList.add('framer-v-wtjozs');
+        }
+      });
+    });
+
+    // 6. Interactive Specialists Tab Switching
+    var doctorPhotos = [
+      './assets/dr_tutkus_og.jpg',
+      './assets/dr_kaupas_og.png',
+      './assets/dr_tijunele_og.jpg',
+      './assets/dr_bauzys_og.jpg'
+    ];
+    var specButtons = document.querySelectorAll('.framer-t9vo8c button, [data-framer-name="Specialists"] button');
+    specButtons.forEach(function(btn, idx) {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        specButtons.forEach(function(b) {
+          b.classList.remove('framer-v-l7hn10');
+          b.classList.add('framer-v-18yegsd');
+          b.setAttribute('data-framer-name', 'Default');
         });
+        btn.classList.remove('framer-v-18yegsd');
+        btn.classList.add('framer-v-l7hn10');
+        btn.setAttribute('data-framer-name', 'Active');
+
+        var specImg = document.getElementById('specialist-main-img') || document.querySelector('.framer-t9vo8c img');
+        if (specImg && doctorPhotos[idx]) {
+          specImg.style.transition = 'opacity 0.25s ease';
+          specImg.style.opacity = '0';
+          setTimeout(function() {
+            specImg.src = doctorPhotos[idx];
+            specImg.style.objectPosition = 'center 15%';
+            specImg.style.opacity = '1';
+          }, 180);
+        }
+      });
+    });
+
+    // 7. Interactive Hero Carousel Next / Prev Controls
+    var heroSlides = [
+      { src: './assets/nord_hero_master.jpg', pos: 'center 30%' },
+      { src: './assets/clinic_interior_og.jpg', pos: 'center center' },
+      { src: './assets/nord_hero_clinic.png', pos: 'center 25%' }
+    ];
+    var currentHeroIdx = 0;
+    var heroGhostButtons = document.querySelectorAll('.framer-59oil5 button, [data-framer-name="Ghost"]');
+    if (heroGhostButtons.length >= 2) {
+      var prevBtn = heroGhostButtons[0];
+      var nextBtn = heroGhostButtons[1];
+      
+      function setHeroSlide(idx) {
+        currentHeroIdx = (idx + heroSlides.length) % heroSlides.length;
+        var heroImgs = document.querySelectorAll('.framer-59oil5 [data-framer-name*="Slide"] img, .framer-80y4h2 img');
+        if (heroImgs.length > 0) {
+          heroImgs[0].style.transition = 'opacity 0.3s ease';
+          heroImgs[0].style.opacity = '0';
+          setTimeout(function() {
+            heroImgs[0].src = heroSlides[currentHeroIdx].src;
+            heroImgs[0].style.objectPosition = heroSlides[currentHeroIdx].pos;
+            heroImgs[0].style.opacity = '1';
+          }, 200);
+        }
+      }
+      
+      prevBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        setHeroSlide(currentHeroIdx - 1);
+      });
+      nextBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        setHeroSlide(currentHeroIdx + 1);
       });
     }
 
-    // 5. Rehydrate 3D Perspective Tilt & Magnetic Cards
+    // 8. Interactive Reviews Carousel Controls
+    var reviewButtons = document.querySelectorAll('.framer-t9hxwc button, [data-framer-name="Dark"]');
+    var reviewRow = document.querySelector('.framer-t9hxwc [data-framer-name="Reviews row"], .framer-t9hxwc .framer-1a74d2');
+    var rX = 0;
+    if (reviewButtons.length >= 2 && reviewRow) {
+      reviewButtons[0].addEventListener('click', function(e) {
+        e.preventDefault();
+        rX = Math.max(0, rX - 440);
+        reviewRow.scrollTo({ left: rX, behavior: 'smooth' });
+      });
+      reviewButtons[1].addEventListener('click', function(e) {
+        e.preventDefault();
+        rX += 440;
+        reviewRow.scrollTo({ left: rX, behavior: 'smooth' });
+      });
+    }
+
+    // 9. Interactive 3D Tilt on Feature Cards
     document.querySelectorAll('[style*="perspective"], [data-framer-name*="Card"], [data-perspective="true"]').forEach(function(card) {
       card.addEventListener('mousemove', function(e) {
         var r = card.getBoundingClientRect();
         var x = (e.clientX - r.left) / r.width - 0.5;
         var y = (e.clientY - r.top) / r.height - 0.5;
-        card.style.transform = 'perspective(1000px) rotateX(' + (-y * 8).toFixed(2) + 'deg) rotateY(' + (x * 8).toFixed(2) + 'deg) scale3d(1.01, 1.01, 1.01)';
+        card.style.transform = 'perspective(1000px) rotateX(' + (-y * 6).toFixed(2) + 'deg) rotateY(' + (x * 6).toFixed(2) + 'deg) scale3d(1.01, 1.01, 1.01)';
       });
       card.addEventListener('mouseleave', function() {
         card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
