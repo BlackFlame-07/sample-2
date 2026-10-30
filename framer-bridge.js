@@ -149,9 +149,9 @@
 
     // 7. Interactive Hero Carousel Next / Prev Controls
     var heroSlides = [
-      { src: './assets/nord_hero_master.jpg', pos: 'center 30%' },
+      { src: './assets/nord_hero_clinic.png', pos: 'center bottom' },
       { src: './assets/clinic_interior_og.jpg', pos: 'center center' },
-      { src: './assets/nord_hero_clinic.png', pos: 'center 25%' }
+      { src: './assets/nord_hero_master.jpg', pos: 'center 30%' }
     ];
     var currentHeroIdx = 0;
     var heroGhostButtons = document.querySelectorAll('.framer-59oil5 button, [data-framer-name="Ghost"]');
