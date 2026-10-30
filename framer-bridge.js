@@ -102,9 +102,9 @@
 
     // 5. Hero Carousel Controls
     var heroSlides = [
-      { src: './assets/nord_hero_clinic.png', pos: 'center bottom' },
-      { src: './assets/clinic_interior_og.jpg', pos: 'center center' },
-      { src: './assets/nord_hero_master.jpg', pos: 'center 30%' }
+      { src: './assets/svs_hero_clinic_1.jpg', pos: 'center bottom' },
+      { src: './assets/svs_hero_surgery.jpg', pos: 'center center' },
+      { src: './assets/svs_reception.jpg', pos: 'center center' }
     ];
     var currentHeroIdx = 0;
     var heroButtons = document.querySelectorAll('#hero [data-framer-name="Ghost"], .framer-59oil5 button');
