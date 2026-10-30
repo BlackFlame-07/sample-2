@@ -102,9 +102,9 @@
 
     // 5. Hero Carousel Controls
     var heroSlides = [
-      { src: './assets/svs_hero_clinic_1.jpg', pos: 'center bottom' },
-      { src: './assets/svs_hero_surgery.jpg', pos: 'center center' },
-      { src: './assets/svs_reception.jpg', pos: 'center center' }
+      { src: './assets/svs_clinic_wide_5k.jpg', pos: 'center center' },
+      { src: './assets/svs_surgery_cinematic_5k.jpg', pos: 'center center' },
+      { src: './assets/svs_treatment_suite_2k.jpg', pos: 'center center' }
     ];
     var currentHeroIdx = 0;
     var heroButtons = document.querySelectorAll('#hero [data-framer-name="Ghost"], .framer-59oil5 button');
