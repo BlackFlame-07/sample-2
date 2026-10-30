@@ -392,7 +392,14 @@
         flex: 1;
         background: none;
         border: none;
-        color: var(--token-a2df7b5c-e4be-4873-9556-9e654799cf30, #5e6c73);
+        color: #303d42;
+        font-family: "Geist", sans-serif;
+        font-size: 12.5px;
+        font-weight: 600;
+        flex: 1;
+        background: none;
+        border: none;
+        color: #303d42;
         font-family: "Geist", sans-serif;
         font-size: 12.5px;
         font-weight: 500;
@@ -427,7 +434,7 @@
         border-radius: 999px;
         padding: 8px 14px;
         font-size: 12px;
-        color: var(--token-4cc4e226-b182-4597-ac54-55b72f1d3756, #44555a);
+        color: #0c1a1d;
         font-weight: 500;
         cursor: pointer;
         display: flex;
@@ -485,7 +492,7 @@
         margin-bottom: 2px;
       }
       .svs-track-sub {
-        color: var(--token-a2df7b5c-e4be-4873-9556-9e654799cf30, #5e6c73);
+        color: #303d42;
         font-size: 10.5px;
       }
 
@@ -537,7 +544,7 @@
         text-align: center;
         font-family: "Geist Mono", monospace;
         font-size: 11px;
-        color: var(--token-a2df7b5c-e4be-4873-9556-9e654799cf30, #5e6c73);
+        color: #303d42;
         font-weight: 500;
         text-transform: uppercase;
         margin-bottom: 8px;
@@ -601,7 +608,7 @@
         font-size: 11px;
         text-transform: uppercase;
         letter-spacing: 0.05em;
-        color: var(--token-a2df7b5c-e4be-4873-9556-9e654799cf30, #5e6c73);
+        color: #303d42;
         margin-bottom: 8px;
         font-weight: 500;
       }
@@ -627,10 +634,10 @@
         color: #0e5a66;
       }
       .svs-slot-pill.active {
-        background: var(--token-606fcb38-b578-4d5e-978a-fdb07a4101f9, #0e5a66);
-        border-color: #0e5a66;
-        color: #0c1a1d;
-        font-weight: 600;
+        background: var(--token-606fcb38-b578-4d5e-978a-fdb07a4101f9, #0e5a66) !important;
+        border-color: #0e5a66 !important;
+        color: #ffffff !important;
+        font-weight: 600 !important;
       }
 
       /* Form inputs */
@@ -643,7 +650,7 @@
         text-transform: uppercase;
         letter-spacing: 0.05em;
         font-weight: 500;
-        color: var(--token-a2df7b5c-e4be-4873-9556-9e654799cf30, #5e6c73);
+        color: #303d42;
         margin-bottom: 6px;
       }
       .svs-form-input, .svs-form-select, .svs-form-textarea {
@@ -668,8 +675,8 @@
       .svs-submit-btn {
         width: 100%;
         background: var(--token-5c696cea-9b0e-49da-8923-0dc909c3e527, #0c1a1d);
-        color: #0c1a1d;
-        font-weight: 500;
+        color: #ffffff !important;
+        font-weight: 600;
         font-family: "Geist", sans-serif;
         font-size: 14px;
         padding: 14px 20px;
@@ -682,6 +689,21 @@
         justify-content: center;
         gap: 8px;
         margin-top: 18px;
+      }
+      .svs-submit-btn span {
+        color: inherit;
+      }
+      #nord-wa-confirm, #nord-wa-confirm *, #nord-wa-main-btn, #nord-wa-main-btn * {
+        color: #ffffff !important;
+      }
+      #nord-add-gcal, #nord-add-gcal * {
+        color: #0c1a1d !important;
+      }
+      .svs-submit-btn:not(#nord-wa-confirm):not(#nord-add-gcal) span, .svs-submit-btn:not(#nord-wa-confirm):not(#nord-add-gcal) {
+        color: #ffffff !important;
+      }
+      .svs-submit-btn span, .svs-submit-btn * {
+        color: #ffffff !important;
       }
       .svs-submit-btn:hover {
         background: var(--token-606fcb38-b578-4d5e-978a-fdb07a4101f9, #0e5a66);
@@ -719,7 +741,7 @@
         border-bottom: none;
       }
       .svs-voucher-label {
-        color: var(--token-a2df7b5c-e4be-4873-9556-9e654799cf30, #5e6c73);
+        color: #303d42;
       }
       .svs-voucher-val {
         color: var(--token-5c696cea-9b0e-49da-8923-0dc909c3e527, #0c1a1d);
@@ -730,7 +752,7 @@
       .svs-tab-btn {
         background: none;
         border: none;
-        color: var(--token-a2df7b5c-e4be-4873-9556-9e654799cf30, #5e6c73);
+        color: #303d42;
         font-size: 13px;
         font-weight: 500;
         cursor: pointer;
@@ -757,14 +779,14 @@
               <img src="./assets/svs_logo_navy.png" style="height: 24px; display: block;" alt="St Vincent Smile">
               <span style="font-family: 'Geist Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: #0e5a66; background: #dcebeb; padding: 4px 10px; border-radius: 999px; font-weight: 500;">Finnieston, Glasgow G3 8LH</span>
             </div>
-            <span style="font-size: 11.5px; color: #44555a; display: flex; align-items: center; gap: 6px; font-weight: 500;">
+            <span style="font-size: 11.5px; color: #1f2d31; display: flex; align-items: center; gap: 6px; font-weight: 500;">
               <span style="width: 6px; height: 6px; border-radius: 50%; background: rgb(39, 163, 107); box-shadow: rgba(39, 163, 107, 0.25) 0px 0px 0px 3px; display: inline-block;"></span>
               Live Slots Available
             </span>
           </div>
 
           <h2 style="font-size: 24px; font-weight: 500; margin-bottom: 6px; letter-spacing: -0.03em; color: #0c1a1d; line-height: 1.25;">Book Appointment & Free 3D iTero Scan</h2>
-          <p style="font-size: 13.5px; color: #44555a; line-height: 1.5; margin-bottom: 18px;">
+          <p style="font-size: 13.5px; color: #1f2d31; line-height: 1.5; margin-bottom: 18px;">
             Schedule your free consultation with Dr. Umer (Diamond Apex Invisalign Provider) or our cosmetic & implant dental team in Glasgow.
           </p>
 
@@ -776,7 +798,7 @@
 
           <!-- 1. CALENDAR VIEW -->
           <div id="view-calendar">
-            <label style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: #5e6c73; font-weight: 500; display: block; margin-bottom: 8px;">Select Clinician / Dentist</label>
+            <label style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: #303d42; font-weight: 500; display: block; margin-bottom: 8px;">Select Clinician / Dentist</label>
             <div class="svs-doctor-select-row" id="nord-doc-selector">
               <div class="svs-doc-pill active" data-doctor="Dr. Umer">
                 <span class="doc-dot"></span>
@@ -796,7 +818,7 @@
               </div>
             </div>
 
-            <label style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: #5e6c73; font-weight: 500; display: block; margin-bottom: 8px;">Appointment / Consultation Type</label>
+            <label style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: #303d42; font-weight: 500; display: block; margin-bottom: 8px;">Appointment / Consultation Type</label>
             <div class="svs-track-grid" id="nord-track-selector">
               <div class="svs-track-item active" data-track="Free Invisalign 3D iTero Consultation">
                 <div class="svs-track-title">✨ Free Invisalign Scan</div>
@@ -886,7 +908,7 @@
                 <span>Confirm Appointment & Lock Date</span>
                 <span style="font-size: 16px;">&rarr;</span>
               </button>
-              <p style="font-size: 11.5px; color: #5e6c73; text-align: center; margin-top: 10px;">
+              <p style="font-size: 11.5px; color: #303d42; text-align: center; margin-top: 10px;">
                 🔒 100% Free Consultation · No Obligation · Instant SMS & Email Confirmation
               </p>
             </form>
@@ -894,29 +916,29 @@
 
           <!-- 2. FINANCE CALCULATOR VIEW -->
           <div id="view-calculator" style="display: none;">
-            <p style="font-size: 13.5px; color: #44555a; margin-bottom: 16px; line-height: 1.5;">
+            <p style="font-size: 13.5px; color: #1f2d31; margin-bottom: 16px; line-height: 1.5;">
               St Vincent Smile partners with Chrysalis Finance to offer 0% APR monthly installments on all cosmetic treatments, Invisalign aligners, and dental implants.
             </p>
             
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 20px;">
               <div style="background: #f3f5f4; border: 1px solid #eaeeed; border-radius: 14px; padding: 18px;">
-                <div style="font-size: 11px; color: #5e6c73; text-transform: uppercase; font-weight: 600; letter-spacing: 0.05em; margin-bottom: 4px;">Invisalign® Aligners</div>
-                <div style="font-family: 'Geist Variable', sans-serif; font-size: 26px; font-weight: 500; color: #0c1a1d; letter-spacing: -0.03em;">From £69<span style="font-size: 13px; font-weight: 400; color: #5e6c73;"> / month</span></div>
+                <div style="font-size: 11px; color: #303d42; text-transform: uppercase; font-weight: 600; letter-spacing: 0.05em; margin-bottom: 4px;">Invisalign® Aligners</div>
+                <div style="font-family: 'Geist Variable', sans-serif; font-size: 26px; font-weight: 500; color: #0c1a1d; letter-spacing: -0.03em;">From £69<span style="font-size: 13px; font-weight: 400; color: #303d42;"> / month</span></div>
                 <div style="font-size: 11.5px; color: #0e5a66; margin-top: 4px; font-weight: 500;">0% APR · 36 Months</div>
-                <div style="font-size: 11px; color: #5e6c73; margin-top: 2px;">Includes Free 3D iTero & Whitening</div>
+                <div style="font-size: 11px; color: #303d42; margin-top: 2px;">Includes Free 3D iTero & Whitening</div>
               </div>
               <div style="background: #f3f5f4; border: 1px solid #eaeeed; border-radius: 14px; padding: 18px;">
-                <div style="font-size: 11px; color: #5e6c73; text-transform: uppercase; font-weight: 600; letter-spacing: 0.05em; margin-bottom: 4px;">Composite Bonding</div>
-                <div style="font-family: 'Geist Variable', sans-serif; font-size: 26px; font-weight: 500; color: #0c1a1d; letter-spacing: -0.03em;">From £54<span style="font-size: 13px; font-weight: 400; color: #5e6c73;"> / month</span></div>
+                <div style="font-size: 11px; color: #303d42; text-transform: uppercase; font-weight: 600; letter-spacing: 0.05em; margin-bottom: 4px;">Composite Bonding</div>
+                <div style="font-family: 'Geist Variable', sans-serif; font-size: 26px; font-weight: 500; color: #0c1a1d; letter-spacing: -0.03em;">From £54<span style="font-size: 13px; font-weight: 400; color: #303d42;"> / month</span></div>
                 <div style="font-size: 11.5px; color: #0e5a66; margin-top: 4px; font-weight: 500;">0% APR · 24 Months</div>
-                <div style="font-size: 11px; color: #5e6c73; margin-top: 2px;">Same-Day Direct Resin Finish</div>
+                <div style="font-size: 11px; color: #303d42; margin-top: 2px;">Same-Day Direct Resin Finish</div>
               </div>
             </div>
 
             <div style="background: #f3f5f4; border: 1px solid #eaeeed; border-radius: 16px; padding: 22px; margin-bottom: 20px;">
               <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px;">
                 <span style="font-size: 13px; font-weight: 500; color: #0c1a1d;">Interactive Finance Estimator</span>
-                <span style="font-size: 11.5px; color: #5e6c73;">Chrysalis Authorised Provider</span>
+                <span style="font-size: 11.5px; color: #303d42;">Chrysalis Authorised Provider</span>
               </div>
               
               <div class="svs-form-group">
@@ -937,9 +959,9 @@
               </div>
 
               <div style="background: #ffffff; border: 1px solid #eaeeed; border-radius: 12px; padding: 18px; text-align: center; margin-top: 16px;">
-                <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: #5e6c73; margin-bottom: 4px; font-weight: 500;">Estimated Monthly Payment</div>
+                <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: #303d42; margin-bottom: 4px; font-weight: 500;">Estimated Monthly Payment</div>
                 <div id="calc-monthly-display" style="font-family: 'Geist Variable', sans-serif; font-size: 38px; font-weight: 500; color: #0c1a1d; letter-spacing: -0.04em;">£233.33</div>
-                <div style="font-size: 11.5px; color: #5e6c73; margin-top: 4px;">Total Payable: <strong id="calc-total-display" style="color: #0c1a1d; font-family: 'Geist Mono', monospace;">£2,800.00</strong> · Interest: <strong style="color: #0e5a66;">£0.00 (0% APR)</strong></div>
+                <div style="font-size: 11.5px; color: #303d42; margin-top: 4px;">Total Payable: <strong id="calc-total-display" style="color: #0c1a1d; font-family: 'Geist Mono', monospace;">£2,800.00</strong> · Interest: <strong style="color: #0e5a66;">£0.00 (0% APR)</strong></div>
               </div>
             </div>
 
@@ -955,18 +977,18 @@
               💬
             </div>
             <h3 style="font-size: 20px; font-weight: 500; margin-bottom: 8px; color: #0c1a1d; letter-spacing: -0.02em;">Direct St Vincent Smile Reception</h3>
-            <p style="font-size: 13.5px; color: #44555a; max-width: 440px; margin: 0 auto 20px; line-height: 1.5;">
+            <p style="font-size: 13.5px; color: #1f2d31; max-width: 440px; margin: 0 auto 20px; line-height: 1.5;">
               Chat directly with our Finnieston dental reception team for appointments, emergency slots, or quick questions. Average response within 10 minutes during clinic opening hours.
             </p>
             <div style="background: #f3f5f4; border: 1px solid #eaeeed; border-radius: 14px; padding: 18px; max-width: 380px; margin: 0 auto 24px; text-align: left; font-size: 13px;">
-              <div style="color: #5e6c73; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 500; margin-bottom: 4px;">Direct WhatsApp Reception:</div>
+              <div style="color: #303d42; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 500; margin-bottom: 4px;">Direct WhatsApp Reception:</div>
               <div style="font-family: 'Geist Mono', monospace; font-size: 15px; font-weight: 600; color: #0c1a1d;">+44 7761 066850</div>
-              <div style="color: #5e6c73; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 500; margin-top: 12px; margin-bottom: 4px;">Clinic Telephone:</div>
+              <div style="color: #303d42; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 500; margin-top: 12px; margin-bottom: 4px;">Clinic Telephone:</div>
               <div style="font-family: 'Geist Mono', monospace; font-size: 15px; font-weight: 600; color: #0c1a1d;">0141 248 1183</div>
-              <div style="color: #5e6c73; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 500; margin-top: 12px; margin-bottom: 4px;">Practice Address:</div>
+              <div style="color: #303d42; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 500; margin-top: 12px; margin-bottom: 4px;">Practice Address:</div>
               <div style="font-size: 13px; color: #0c1a1d;">23c St Vincent Crescent, Glasgow G3 8LH</div>
             </div>
-            <a href="https://wa.me/447761066850" target="_blank" rel="noopener noreferrer" class="svs-submit-btn" style="text-decoration: none; max-width: 380px; margin: 0 auto; background: #25D366; color: #0c1a1d;">
+            <a href="https://wa.me/447761066850" target="_blank" rel="noopener noreferrer" class="svs-submit-btn" id="nord-wa-main-btn" style="text-decoration: none; max-width: 380px; margin: 0 auto; background: #075E54 !important; color: #ffffff !important; font-weight: 600;">
               <span>Open WhatsApp Chat Now</span>
               <span>&rarr;</span>
             </a>
@@ -979,7 +1001,7 @@
                 ✓
               </div>
               <h3 style="font-size: 22px; font-weight: 500; margin-bottom: 4px; color: #0c1a1d; letter-spacing: -0.02em;">Appointment Confirmed</h3>
-              <p style="font-size: 13.5px; color: #44555a; margin-bottom: 18px;">
+              <p style="font-size: 13.5px; color: #1f2d31; margin-bottom: 18px;">
                 Your appointment at St Vincent Smile has been booked. A confirmation has been prepared for your records.
               </p>
 
@@ -1007,15 +1029,15 @@
               </div>
 
               <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 14px;">
-                <a id="nord-add-gcal" href="#" target="_blank" rel="noopener noreferrer" class="svs-submit-btn" style="margin-top: 0; font-size: 12px; text-decoration: none; background: #f3f5f4; color: #0c1a1d; border: 1px solid #eaeeed;">
+                <a id="nord-add-gcal" href="#" target="_blank" rel="noopener noreferrer" class="svs-submit-btn" style="margin-top: 0; font-size: 12px; font-weight: 600; text-decoration: none; background: #f3f5f4; color: #0c1a1d !important; border: 1px solid #eaeeed;">
                   📅 Add to Google Cal
                 </a>
-                <a id="nord-wa-confirm" href="https://wa.me/447761066850" target="_blank" rel="noopener noreferrer" class="svs-submit-btn" style="margin-top: 0; font-size: 12px; text-decoration: none; background: #25D366; color: #fff;">
+                <a id="nord-wa-confirm" href="https://wa.me/447761066850" target="_blank" rel="noopener noreferrer" class="svs-submit-btn" style="margin-top: 0; font-size: 12px; font-weight: 600; text-decoration: none; background: #075E54; color: #ffffff !important; font-weight: 600;">
                   💬 WhatsApp Reception
                 </a>
               </div>
 
-              <button class="svs-submit-btn" id="nord-success-done" style="margin-top: 14px; background: #0c1a1d; color: #0c1a1d;">
+              <button class="svs-submit-btn" id="nord-success-done" style="margin-top: 14px; background: #0c1a1d; color: #ffffff !important;">
                 Done
               </button>
             </div>
@@ -1041,24 +1063,24 @@
 
           <div id="legal-content-privacy" class="svs-legal-tab-pane">
             <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 12px;">UK Data Protection Act 2018 & Medical Privacy</h3>
-            <p style="font-size: 13px; color: #44555a; line-height: 1.6; margin-bottom: 14px;">
+            <p style="font-size: 13px; color: #1f2d31; line-height: 1.6; margin-bottom: 14px;">
               Saint Vincent Smile Centre Limited trading as St Vincent Smile (23c St Vincent Crescent, Finnieston, Glasgow G3 8LH) complies strictly with the UK General Data Protection Regulation (UK GDPR) and Data Protection Act 2018. All patient records, digital 3D iTero impressions, and CBCT radiographs are encrypted and stored in certified UK clinical systems.
             </p>
           </div>
 
           <div id="legal-content-terms" class="svs-legal-tab-pane" style="display: none;">
             <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 12px;">General Dental Council (GDC) & HIS Regulation</h3>
-            <p style="font-size: 13px; color: #44555a; line-height: 1.6; margin-bottom: 14px;">
+            <p style="font-size: 13px; color: #1f2d31; line-height: 1.6; margin-bottom: 14px;">
               All dental surgeons, therapists, and hygienists practicing at St Vincent Smile are fully registered with the General Dental Council (GDC). Our clinic operates under the clinical standards of Healthcare Improvement Scotland (HIS).
             </p>
-            <p style="font-size: 13px; color: #44555a; line-height: 1.6; margin-bottom: 14px;">
+            <p style="font-size: 13px; color: #1f2d31; line-height: 1.6; margin-bottom: 14px;">
               Finance Disclosure: Saint Vincent Smile Centre Limited is an Appointed Representative of Chrysalis Finance Limited, which is authorised and regulated by the Financial Conduct Authority (FCA).
             </p>
           </div>
 
           <div id="legal-content-accessibility" class="svs-legal-tab-pane" style="display: none;">
             <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 12px;">Web Accessibility Standards (WCAG 2.1 AA)</h3>
-            <p style="font-size: 13px; color: #44555a; line-height: 1.6; margin-bottom: 14px;">
+            <p style="font-size: 13px; color: #1f2d31; line-height: 1.6; margin-bottom: 14px;">
               This digital clinic experience conforms with Level AA of the W3C Web Content Accessibility Guidelines 2.1. Designed with high color contrast, screen reader compatibility, and full keyboard navigation.
             </p>
           </div>
