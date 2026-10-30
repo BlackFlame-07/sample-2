@@ -103,7 +103,7 @@
     // 5. Hero Carousel Controls
     var heroSlides = [
       { src: './assets/svs_clinic_wide_5k.jpg', pos: 'center center' },
-      { src: './assets/ZAe2RSeRRvptuPbcksJup5EdV_6a3cf915.webp', pos: 'center center' },
+      { src: './assets/ZAe2RSeRRvptuPbcksJup5EdVE_6a3cf915.webp', pos: 'center center' },
       { src: './assets/hkCLvVNbVvxFIG5ODVbe6sk_56529734.webp', pos: 'center center' }
     ];
     var currentHeroIdx = 0;
@@ -195,56 +195,56 @@
     // 8. Specialists Doctor Tabs
     var specialistsData = [
       {
-        name: 'Dr. Umer',
-        role: 'Principal Dentist & Diamond Apex Provider',
+        name: 'Dr. Elena Varga',
+        role: 'Cosmetic dentistry',
         photo: './assets/LhRdrbEme10eLb0FCf78WEGE_2e97e3f8.webp',
-        alt: 'Dr. Umer · Principal Dentist & Diamond Apex Invisalign Provider',
-        bio: 'Dr. Umer has treated thousands of smile patients over 18+ years of private practice in Glasgow. As a certified Diamond Apex Invisalign provider, he specializes in complex alignment, bespoke composite bonding, and restorative implants with gentle care.',
-        experience: '18+ years',
-        languages: 'English, Urdu',
+        alt: 'Dr. Elena Varga · Cosmetic dentistry',
+        bio: 'Dr. Elena Varga treats smile patients with modern ceramic veneers, delicate composite bonding, and preventative aesthetic care. Unhurried appointments where every step is explained.',
+        experience: '12 years',
+        languages: 'English, German',
         inStudio: 'Mon, Tue, Thu',
         rating: '4.9',
-        reviews: '312 reviews'
+        reviews: '280 reviews'
       },
       {
-        name: 'Dr. Jacqueline Eow',
-        role: 'General Dentist & Facial Aesthetics',
+        name: 'Dr. Daniel Costa',
+        role: 'Orthodontics',
         photo: './assets/i9YV55qg35geFijtWVbcSvyZI_2af79674.webp',
-        alt: 'Dr. Jacqueline Eow · General Dentist & Facial Aesthetics',
-        bio: 'Dr. Jacqueline Eow provides general and restorative dental care with specialized clinical focus in root canal treatments, aesthetic crowns, and delicate facial aesthetics. Known for a gentle, calming approach that puts nervous patients at complete ease.',
-        experience: '11 years',
-        languages: 'English, Cantonese',
+        alt: 'Dr. Daniel Costa · Orthodontics',
+        bio: 'Dr. Daniel Costa specializes in clear aligners and comprehensive bite correction for adults and teens. Focused on facial harmony and gentle, predictable alignment.',
+        experience: '10 years',
+        languages: 'English, Spanish',
         inStudio: 'Wed, Fri, Sat',
         rating: '5.0',
-        reviews: '184 reviews'
+        reviews: '195 reviews'
       },
       {
-        name: 'Dr. Harry Connor',
-        role: 'General & Cosmetic Dentist',
+        name: 'Dr. Sofia Reyes',
+        role: "Children's dentistry",
         photo: './assets/TjZGJmXA2itrXL8hlBEh6zV8P_aba0c930.webp',
-        alt: 'Dr. Harry Connor · General & Cosmetic Dentist',
-        bio: 'Dr. Harry Connor delivers modern minimally-invasive restorative dentistry, custom tooth-coloured composite bonding, and comprehensive check-ups. He focuses on long-term preventative health and creating natural, balanced smiles.',
+        alt: "Dr. Sofia Reyes · Children's dentistry",
+        bio: "Dr. Sofia Reyes creates calm, fear-free visits for younger patients. She believes positive first dental experiences build lifelong healthy dental habits without anxiety.",
         experience: '8 years',
-        languages: 'English',
+        languages: 'English, Portuguese',
         inStudio: 'Mon, Wed, Fri',
         rating: '4.9',
-        reviews: '142 reviews'
+        reviews: '162 reviews'
       },
       {
-        name: 'Bronagh & Anisha',
-        role: 'Lead Dental Therapists & Hygiene',
-        photo: './assets/ZAe2RSeRRvptuPbcksJup5EdV_6a3cf915.webp',
-        alt: 'Bronagh O’Dowd & Anisha Pariyarath · Lead Dental Therapists & Hygiene',
-        bio: 'Our dedicated dental hygiene therapists Bronagh O’Dowd and Anisha Pariyarath deliver gentle Airflow stain removal, deep periodontal therapy, and customized preventive maintenance programs to keep your teeth and gums in pristine health.',
-        experience: '9 years',
-        languages: 'English, Malayalam',
+        name: 'Dr. Ryan Okafor',
+        role: 'Implants & surgery',
+        photo: './assets/ZAe2RSeRRvptuPbcksJup5EdVE_6a3cf915.webp',
+        alt: 'Dr. Ryan Okafor · Implants & surgery',
+        bio: 'Dr. Ryan Okafor handles precision computer-guided implant placement, delicate extractions, and full smile restorations with surgical mastery and sedation options.',
+        experience: '14 years',
+        languages: 'English, French',
         inStudio: 'Tue, Thu, Sat',
         rating: '5.0',
-        reviews: '215 reviews'
+        reviews: '310 reviews'
       }
     ];
 
-    var specButtons = document.querySelectorAll('#specialists [data-framer-name="List"] button');
+    var specButtons = document.querySelectorAll('#team [data-framer-name="List"] button, #team button, #specialists button, .framer-t9vo8c button');
     if (!specButtons || specButtons.length === 0) {
       specButtons = document.querySelectorAll('#specialists button, .framer-t9vo8c button');
     }
