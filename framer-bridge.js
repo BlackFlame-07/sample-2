@@ -194,10 +194,10 @@
 
     // 8. Specialists Doctor Tabs
     var doctorPhotos = [
-      './assets/dr_tutkus_og.jpg',
-      './assets/dr_kaupas_og.png',
-      './assets/dr_tijunele_og.jpg',
-      './assets/dr_bauzys_og.jpg'
+      './assets/svs_doctor_umer.jpg',
+      './assets/svs_interior_chair.jpg',
+      './assets/svs_hero_surgery.jpg',
+      './assets/svs_reception.jpg'
     ];
     var specButtons = document.querySelectorAll('#specialists button, .framer-t9vo8c button');
     specButtons.forEach(function(btn, idx) {
@@ -261,11 +261,11 @@
     var yourVisitTitle = bookSec.querySelector('[data-framer-name="Your visit"] p, [data-framer-name="Your visit"]');
 
     var treatments = {
-      'Check-up & cleaning': { name: 'Tummy Tuck', doctor: 'Dr. Jonas Tutkus' },
-      'Whitening consultation': { name: 'Mommy Makeover', doctor: 'Dr. Jonas Tutkus' },
-      'Aligner consultation': { name: 'Breast Augmentation & Lift', doctor: 'Dr. Simonas Kaupas' },
-      'Implant consultation': { name: 'Deep Plane Facelift', doctor: 'Dr. Andrius Pajeda' },
-      'Emergency appointment': { name: 'Urgent Consultation', doctor: 'Dr. Kamilė Tijūnėlė' }
+      'Check-up & cleaning': { name: 'Invisalign® Aligners', doctor: 'Dr. Umer (Diamond Apex)' },
+      'Whitening consultation': { name: 'Dental Implants', doctor: 'Dr. Umer & Surgical Team' },
+      'Aligner consultation': { name: 'Composite Bonding', doctor: 'Cosmetic Dental Team' },
+      'Implant consultation': { name: 'Porcelain Veneers', doctor: 'Dr. Umer' },
+      'Emergency appointment': { name: 'Emergency Dental Relief', doctor: 'Same-Day Dental Team' }
     };
 
     optionCards.forEach(function(card) {
@@ -308,14 +308,14 @@
   // Inject High-End Modals for Consultation, Legal & Articles
   function injectModals() {
     var modalCss = document.createElement('style');
-    modalCss.id = 'nord-modals-css';
+    modalCss.id = 'svs-modals-css';
     modalCss.textContent = `
-      .nord-modal-backdrop {
+      .svs-modal-backdrop {
         position: fixed;
         inset: 0;
-        background: rgba(0, 0, 0, 0.82);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
+        background: rgba(4, 8, 16, 0.86);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
         z-index: 999999;
         display: flex;
         align-items: center;
@@ -325,15 +325,15 @@
         pointer-events: none;
         transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1);
       }
-      .nord-modal-backdrop.active {
+      .svs-modal-backdrop.active {
         opacity: 1;
         pointer-events: auto;
       }
-      .nord-modal-card {
-        background: #101319;
+      .svs-modal-card {
+        background: #0d121c;
         border: 1px solid rgba(255, 255, 255, 0.12);
         border-radius: 20px;
-        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.9), 0 0 0 1px rgba(255, 255, 255, 0.05);
+        box-shadow: 0 30px 70px rgba(0, 0, 0, 0.95), 0 0 0 1px rgba(255, 255, 255, 0.06);
         max-width: 680px;
         width: 100%;
         max-height: 92vh;
@@ -345,10 +345,10 @@
         transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
         position: relative;
       }
-      .nord-modal-backdrop.active .nord-modal-card {
+      .svs-modal-backdrop.active .svs-modal-card {
         transform: scale(1) translateY(0);
       }
-      .nord-modal-close {
+      .svs-modal-close {
         position: absolute;
         top: 20px;
         right: 20px;
@@ -366,11 +366,11 @@
         transition: background 0.2s;
         z-index: 10;
       }
-      .nord-modal-close:hover {
-        background: rgba(255, 255, 255, 0.18);
+      .svs-modal-close:hover {
+        background: rgba(255, 255, 255, 0.2);
       }
       
-      .nord-mode-tabs {
+      .svs-mode-tabs {
         display: flex;
         gap: 8px;
         margin: 20px 0 24px 0;
@@ -379,7 +379,7 @@
         border-radius: 10px;
         border: 1px solid rgba(255, 255, 255, 0.08);
       }
-      .nord-mode-btn {
+      .svs-mode-btn {
         flex: 1;
         background: none;
         border: none;
@@ -395,20 +395,20 @@
         gap: 6px;
         transition: all 0.2s;
       }
-      .nord-mode-btn.active {
+      .svs-mode-btn.active {
         background: rgba(255, 255, 255, 0.12);
         color: #ffffff;
         box-shadow: 0 2px 8px rgba(0,0,0,0.3);
       }
       
-      .nord-doctor-select-row {
+      .svs-doctor-select-row {
         display: flex;
         gap: 8px;
         overflow-x: auto;
         padding-bottom: 8px;
         margin-bottom: 18px;
       }
-      .nord-doc-pill {
+      .svs-doc-pill {
         flex-shrink: 0;
         background: rgba(255, 255, 255, 0.04);
         border: 1px solid rgba(255, 255, 255, 0.1);
@@ -422,25 +422,25 @@
         gap: 8px;
         transition: all 0.2s;
       }
-      .nord-doc-pill:hover, .nord-doc-pill.active {
-        background: rgba(56, 189, 248, 0.1);
+      .svs-doc-pill:hover, .svs-doc-pill.active {
+        background: rgba(56, 189, 248, 0.12);
         border-color: #38bdf8;
         color: #ffffff;
       }
-      .nord-doc-pill .doc-dot {
+      .svs-doc-pill .doc-dot {
         width: 8px;
         height: 8px;
         border-radius: 50%;
         background: #34d399;
       }
 
-      .nord-track-grid {
+      .svs-track-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 8px;
         margin-bottom: 18px;
       }
-      .nord-track-item {
+      .svs-track-item {
         background: rgba(0, 0, 0, 0.3);
         border: 1px solid rgba(255, 255, 255, 0.09);
         border-radius: 10px;
@@ -451,44 +451,44 @@
         transition: all 0.2s;
         text-align: center;
       }
-      .nord-track-item.active {
+      .svs-track-item.active {
         border-color: #38bdf8;
         background: rgba(56, 189, 248, 0.08);
       }
-      .nord-track-title {
+      .svs-track-title {
         font-weight: 700;
         color: #ffffff;
         margin-bottom: 2px;
       }
-      .nord-track-sub {
+      .svs-track-sub {
         color: #94a3b8;
         font-size: 10px;
       }
 
-      .nord-cal-box {
-        background: rgba(0, 0, 0, 0.4);
+      .svs-cal-box {
+        background: rgba(0, 0, 0, 0.45);
         border: 1px solid rgba(255, 255, 255, 0.1);
         border-radius: 14px;
         padding: 16px;
         margin-bottom: 18px;
       }
-      .nord-cal-header {
+      .svs-cal-header {
         display: flex;
         align-items: center;
         justify-content: space-between;
         margin-bottom: 12px;
       }
-      .nord-cal-title {
+      .svs-cal-title {
         font-size: 14px;
         font-weight: 700;
         color: #ffffff;
         letter-spacing: -0.01em;
       }
-      .nord-cal-nav {
+      .svs-cal-nav {
         display: flex;
         gap: 6px;
       }
-      .nord-cal-nav-btn {
+      .svs-cal-nav-btn {
         background: rgba(255, 255, 255, 0.08);
         border: 1px solid rgba(255, 255, 255, 0.12);
         color: #ffffff;
@@ -501,10 +501,10 @@
         cursor: pointer;
         font-size: 12px;
       }
-      .nord-cal-nav-btn:hover {
-        background: rgba(255, 255, 255, 0.16);
+      .svs-cal-nav-btn:hover {
+        background: rgba(255, 255, 255, 0.18);
       }
-      .nord-cal-weekdays {
+      .svs-cal-weekdays {
         display: grid;
         grid-template-columns: repeat(7, 1fr);
         text-align: center;
@@ -513,12 +513,12 @@
         font-weight: 600;
         margin-bottom: 8px;
       }
-      .nord-cal-days {
+      .svs-cal-days {
         display: grid;
         grid-template-columns: repeat(7, 1fr);
         gap: 4px;
       }
-      .nord-day-cell {
+      .svs-day-cell {
         aspect-ratio: 1;
         display: flex;
         flex-direction: column;
@@ -533,17 +533,17 @@
         transition: all 0.15s;
         border: 1px solid transparent;
       }
-      .nord-day-cell:hover:not(.disabled) {
+      .svs-day-cell:hover:not(.disabled) {
         background: rgba(255, 255, 255, 0.08);
         border-color: rgba(255, 255, 255, 0.15);
       }
-      .nord-day-cell.active {
+      .svs-day-cell.active {
         background: #38bdf8 !important;
-        color: #0b0d11 !important;
+        color: #080c14 !important;
         font-weight: 700 !important;
         border-color: #38bdf8 !important;
       }
-      .nord-day-cell.has-slots::after {
+      .svs-day-cell.has-slots::after {
         content: '';
         position: absolute;
         bottom: 3px;
@@ -552,20 +552,20 @@
         border-radius: 50%;
         background: #34d399;
       }
-      .nord-day-cell.active::after {
-        background: #0b0d11;
+      .svs-day-cell.active::after {
+        background: #080c14;
       }
-      .nord-day-cell.disabled {
+      .svs-day-cell.disabled {
         opacity: 0.25;
         cursor: not-allowed;
       }
 
-      .nord-slots-wrap {
+      .svs-slots-wrap {
         margin-top: 14px;
         padding-top: 12px;
         border-top: 1px solid rgba(255, 255, 255, 0.08);
       }
-      .nord-slots-title {
+      .svs-slots-title {
         font-size: 11px;
         text-transform: uppercase;
         letter-spacing: 0.05em;
@@ -573,12 +573,12 @@
         margin-bottom: 8px;
         font-weight: 600;
       }
-      .nord-slots-grid {
+      .svs-slots-grid {
         display: flex;
         flex-wrap: wrap;
         gap: 6px;
       }
-      .nord-slot-pill {
+      .svs-slot-pill {
         background: rgba(255, 255, 255, 0.04);
         border: 1px solid rgba(255, 255, 255, 0.1);
         border-radius: 6px;
@@ -588,16 +588,16 @@
         cursor: pointer;
         transition: all 0.15s;
       }
-      .nord-slot-pill:hover, .nord-slot-pill.active {
+      .svs-slot-pill:hover, .svs-slot-pill.active {
         background: rgba(56, 189, 248, 0.15);
         border-color: #38bdf8;
         color: #ffffff;
       }
 
-      .nord-form-group {
+      .svs-form-group {
         margin-bottom: 14px;
       }
-      .nord-form-group label {
+      .svs-form-group label {
         display: block;
         font-size: 11px;
         text-transform: uppercase;
@@ -606,7 +606,7 @@
         color: #94a3b8;
         margin-bottom: 5px;
       }
-      .nord-form-input, .nord-form-select, .nord-form-textarea {
+      .svs-form-input, .svs-form-select, .svs-form-textarea {
         width: 100%;
         background: rgba(0, 0, 0, 0.35);
         border: 1px solid rgba(255, 255, 255, 0.14);
@@ -618,11 +618,11 @@
         outline: none;
         transition: border-color 0.2s, box-shadow 0.2s;
       }
-      .nord-form-input:focus, .nord-form-select:focus, .nord-form-textarea:focus {
+      .svs-form-input:focus, .svs-form-select:focus, .svs-form-textarea:focus {
         border-color: #38bdf8;
         box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.2);
       }
-      .nord-submit-btn {
+      .svs-submit-btn {
         width: 100%;
         background: #ffffff;
         color: #0b0d11;
@@ -639,18 +639,18 @@
         gap: 8px;
         margin-top: 18px;
       }
-      .nord-submit-btn:hover {
+      .svs-submit-btn:hover {
         background: #f1f5f9;
         transform: translateY(-1px);
       }
-      .nord-success-card {
+      .svs-success-card {
         background: rgba(16, 185, 129, 0.08);
         border: 1px solid rgba(16, 185, 129, 0.25);
         border-radius: 16px;
         padding: 24px;
         text-align: center;
       }
-      .nord-voucher-box {
+      .svs-voucher-box {
         background: rgba(0, 0, 0, 0.35);
         border: 1px solid rgba(255, 255, 255, 0.1);
         border-radius: 10px;
@@ -660,27 +660,27 @@
         font-size: 13px;
         line-height: 1.6;
       }
-      .nord-voucher-row {
+      .svs-voucher-row {
         display: flex;
         justify-content: space-between;
         margin-bottom: 6px;
         padding-bottom: 6px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.06);
       }
-      .nord-voucher-row:last-child {
+      .svs-voucher-row:last-child {
         margin-bottom: 0;
         padding-bottom: 0;
         border-bottom: none;
       }
-      .nord-voucher-label {
+      .svs-voucher-label {
         color: #94a3b8;
       }
-      .nord-voucher-val {
+      .svs-voucher-val {
         color: #ffffff;
         font-weight: 600;
       }
       
-      .nord-tab-btn {
+      .svs-tab-btn {
         background: none;
         border: none;
         color: #94a3b8;
@@ -691,7 +691,7 @@
         border-radius: 6px;
         transition: color 0.2s, background 0.2s;
       }
-      .nord-tab-btn.active {
+      .svs-tab-btn.active {
         color: #ffffff;
         background: rgba(255, 255, 255, 0.1);
       }
@@ -700,14 +700,14 @@
 
     // Modal Markup
     var modalHtml = `
-      <div id="nord-consultation-modal" class="nord-modal-backdrop">
-        <div class="nord-modal-card">
-          <button class="nord-modal-close" id="nord-close-consultation">&times;</button>
+      <div id="nord-consultation-modal" class="svs-modal-backdrop">
+        <div class="svs-modal-card">
+          <button class="svs-modal-close" id="nord-close-consultation">&times;</button>
           
           <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
             <div style="display: flex; align-items: center; gap: 10px;">
-              <img src="./assets/nord_og_logo.png" style="height: 22px; filter: brightness(0) invert(1);">
-              <span style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: #38bdf8; font-weight: 700;">Direct Clinic Reservation</span>
+              <img src="./assets/svs_logo_navy.png" style="height: 24px; filter: brightness(0) invert(1);">
+              <span style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: #38bdf8; font-weight: 700;">Finnieston, Glasgow G3 8LH</span>
             </div>
             <span style="font-size: 11px; color: #34d399; display: flex; align-items: center; gap: 4px;">
               <span style="width: 6px; height: 6px; border-radius: 50%; background: #34d399; display: inline-block;"></span>
@@ -715,159 +715,182 @@
             </span>
           </div>
 
-          <h2 style="font-size: 22px; font-weight: 700; margin-bottom: 6px; letter-spacing: -0.02em;">Surgical Consultation & Booking Calendar</h2>
+          <h2 style="font-size: 22px; font-weight: 700; margin-bottom: 6px; letter-spacing: -0.02em;">Book Appointment & Free 3D iTero Scan</h2>
           <p style="font-size: 13px; color: #94a3b8; line-height: 1.45; margin-bottom: 16px;">
-            Select your senior surgeon and preferred date for an initial 3D Crisalix simulation or reserve an upcoming Fast-Track surgery week in Kaunas, Lithuania.
+            Schedule your free consultation with Dr. Umer (Diamond Apex Invisalign Provider) or our cosmetic & implant dental team in Glasgow.
           </p>
 
-          <div class="nord-mode-tabs">
-            <button class="nord-mode-btn active" id="mode-cal-btn">📅 Booking Calendar</button>
-            <button class="nord-mode-btn" id="mode-calc-btn">🧮 2026 Price Calculator</button>
-            <button class="nord-mode-btn" id="mode-wa-btn">💬 WhatsApp Coordinator</button>
+          <div class="svs-mode-tabs">
+            <button class="svs-mode-btn active" id="mode-cal-btn">📅 Booking Calendar</button>
+            <button class="svs-mode-btn" id="mode-calc-btn">💳 0% Finance Calculator</button>
+            <button class="svs-mode-btn" id="mode-wa-btn">💬 WhatsApp Reception</button>
           </div>
 
           <!-- 1. CALENDAR VIEW -->
           <div id="view-calendar">
-            <label style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: #94a3b8; font-weight: 600; display: block; margin-bottom: 6px;">Select Senior Plastic Surgeon</label>
-            <div class="nord-doctor-select-row" id="nord-doc-selector">
-              <div class="nord-doc-pill active" data-doctor="Dr. Jonas Tutkus">
+            <label style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: #94a3b8; font-weight: 600; display: block; margin-bottom: 6px;">Select Clinician / Dentist</label>
+            <div class="svs-doctor-select-row" id="nord-doc-selector">
+              <div class="svs-doc-pill active" data-doctor="Dr. Umer">
                 <span class="doc-dot"></span>
-                <span>Dr. Jonas Tutkus (Senior Plastic Surgeon)</span>
+                <span>Dr. Umer (Principal Dentist · Invisalign Diamond Apex)</span>
               </div>
-              <div class="nord-doc-pill" data-doctor="Dr. Simonas Kaupas">
+              <div class="svs-doc-pill" data-doctor="Cosmetic Dental Team">
                 <span class="doc-dot"></span>
-                <span>Dr. Simonas Kaupas (Body Contouring)</span>
+                <span>Cosmetic Dental Team (Composite Bonding & Veneers)</span>
               </div>
-              <div class="nord-doc-pill" data-doctor="Dr. Andrius Pajeda">
+              <div class="svs-doc-pill" data-doctor="Implant Specialist Team">
                 <span class="doc-dot"></span>
-                <span>Dr. Andrius Pajeda (Senior Surgeon)</span>
+                <span>Implant Specialist Team (Swiss Implants & All-on-4)</span>
               </div>
-              <div class="nord-doc-pill" data-doctor="Dr. Kamilė Tijūnėlė">
+              <div class="svs-doc-pill" data-doctor="Dental Hygiene Team">
                 <span class="doc-dot"></span>
-                <span>Dr. Kamilė Tijūnėlė (Facial & Breast)</span>
-              </div>
-              <div class="nord-doc-pill" data-doctor="Dr. Karolis Baužys">
-                <span class="doc-dot"></span>
-                <span>Dr. Karolis Baužys (Reconstructive)</span>
+                <span>Dental Hygiene Team (Airflow Polish)</span>
               </div>
             </div>
 
-            <label style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: #94a3b8; font-weight: 600; display: block; margin-bottom: 6px;">Consultation or Surgery Track</label>
-            <div class="nord-track-grid" id="nord-track-selector">
-              <div class="nord-track-item active" data-track="Free 3D Crisalix Video Consultation">
-                <div class="nord-track-title">🎥 3D Consultation</div>
-                <div class="nord-track-sub">Free Crisalix · Zoom/WhatsApp</div>
+            <label style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: #94a3b8; font-weight: 600; display: block; margin-bottom: 6px;">Appointment / Consultation Type</label>
+            <div class="svs-track-grid" id="nord-track-selector">
+              <div class="svs-track-item active" data-track="Free Invisalign 3D iTero Consultation">
+                <div class="svs-track-title">✨ Free Invisalign Scan</div>
+                <div class="svs-track-sub">Diamond Apex · 3D iTero</div>
               </div>
-              <div class="nord-track-item" data-track="Fast-Track Surgery Week (-5% Discount)">
-                <div class="nord-track-title">⚡ Fast-Track Week</div>
-                <div class="nord-track-sub">Save 5% · Next 30 Days</div>
+              <div class="svs-track-item" data-track="Dental Implants & All-on-4 Assessment">
+                <div class="svs-track-title">🦷 Dental Implants</div>
+                <div class="svs-track-sub">3D CBCT Guided Exam</div>
               </div>
-              <div class="nord-track-item" data-track="In-Person Kaunas Hospital Visit">
-                <div class="nord-track-title">🏥 Kaunas Hospital</div>
-                <div class="nord-track-sub">In-Person Pre-Op Exam</div>
+              <div class="svs-track-item" data-track="Artisan Composite Bonding Assessment">
+                <div class="svs-track-title">💎 Composite Bonding</div>
+                <div class="svs-track-sub">Same-Day Smile Makeover</div>
               </div>
             </div>
 
-            <div class="nord-cal-box">
-              <div class="nord-cal-header">
-                <div class="nord-cal-title" id="nord-cal-month-year">November 2026</div>
-                <div class="nord-cal-nav">
-                  <button class="nord-cal-nav-btn" id="nord-cal-prev">&lsaquo;</button>
-                  <button class="nord-cal-nav-btn" id="nord-cal-next">&rsaquo;</button>
+            <div class="svs-cal-box">
+              <div class="svs-cal-header">
+                <div class="svs-cal-title" id="nord-cal-month-year">November 2026</div>
+                <div class="svs-cal-nav">
+                  <button class="svs-cal-nav-btn" id="nord-cal-prev">&lsaquo;</button>
+                  <button class="svs-cal-nav-btn" id="nord-cal-next">&rsaquo;</button>
                 </div>
               </div>
-              <div class="nord-cal-weekdays">
+              <div class="svs-cal-weekdays">
                 <span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span><span>Su</span>
               </div>
-              <div class="nord-cal-days" id="nord-cal-days-grid"></div>
+              <div class="svs-cal-days" id="nord-cal-days-grid"></div>
 
-              <div class="nord-slots-wrap">
-                <div class="nord-slots-title">Available Slots for <span id="nord-selected-date-label">Thu, Nov 12</span></div>
-                <div class="nord-slots-grid" id="nord-slots-grid">
-                  <div class="nord-slot-pill active" data-slot="09:30 AM (GMT+2)">09:30 AM</div>
-                  <div class="nord-slot-pill" data-slot="11:00 AM (GMT+2)">11:00 AM</div>
-                  <div class="nord-slot-pill" data-slot="14:00 PM (GMT+2)">02:00 PM</div>
-                  <div class="nord-slot-pill" data-slot="16:30 PM (GMT+2)">04:30 PM</div>
-                  <div class="nord-slot-pill" data-slot="18:00 PM (GMT+2 / 16:00 UK)">06:00 PM (UK)</div>
+              <div class="svs-slots-wrap">
+                <div class="svs-slots-title">Available Glasgow Slots for <span id="nord-selected-date-label">Thu, Nov 12</span></div>
+                <div class="svs-slots-grid" id="nord-slots-grid">
+                  <div class="svs-slot-pill active" data-slot="09:15 AM">09:15 AM</div>
+                  <div class="svs-slot-pill" data-slot="10:30 AM">10:30 AM</div>
+                  <div class="svs-slot-pill" data-slot="11:45 AM">11:45 AM</div>
+                  <div class="svs-slot-pill" data-slot="14:15 PM">02:15 PM</div>
+                  <div class="svs-slot-pill" data-slot="16:00 PM">04:00 PM</div>
+                  <div class="svs-slot-pill" data-slot="17:30 PM (Late Evening)">05:30 PM (Late Evening)</div>
                 </div>
               </div>
             </div>
 
             <form id="nord-consultation-form">
-              <div class="nord-form-group">
-                <label>Procedure of Interest</label>
-                <select id="nord-procedure-select" class="nord-form-select">
-                  <option value="Tummy Tuck (Abdominoplasty)">Tummy Tuck (Abdominoplasty)</option>
-                  <option value="Mommy Makeover (Combined Care)">Mommy Makeover (Combined Care)</option>
-                  <option value="Breast Augmentation / Reduction & Lift">Breast Augmentation / Reduction & Lift</option>
-                  <option value="Deep Plane Facelift & Neck Lift">Deep Plane Facelift & Neck Lift</option>
-                  <option value="Rhinoplasty (Nose Surgery)">Rhinoplasty (Nose Surgery)</option>
-                  <option value="Liposuction & Body Contouring">Liposuction & Body Contouring</option>
+              <div class="svs-form-group">
+                <label>Primary Treatment</label>
+                <select id="nord-procedure-select" class="svs-form-select">
+                  <option value="Invisalign® Clear Aligners (Diamond Apex)">Invisalign® Clear Aligners (Diamond Apex)</option>
+                  <option value="Dental Implants & All-on-4">Dental Implants & All-on-4</option>
+                  <option value="Artisan Composite Bonding">Artisan Composite Bonding</option>
+                  <option value="Porcelain Veneers & Smile Makeovers">Porcelain Veneers & Smile Makeovers</option>
+                  <option value="Airflow Dental Hygiene & Polish">Airflow Dental Hygiene & Polish</option>
+                  <option value="Emergency Dental Pain Relief">Emergency Dental Pain Relief</option>
                 </select>
               </div>
               
               <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
-                <div class="nord-form-group">
+                <div class="svs-form-group">
                   <label>Full Name *</label>
-                  <input type="text" required class="nord-form-input" id="nord-name" placeholder="e.g. Victoria Smith">
+                  <input type="text" required class="svs-form-input" id="nord-name" placeholder="e.g. Fiona Campbell">
                 </div>
-                <div class="nord-form-group">
+                <div class="svs-form-group">
                   <label>Email Address *</label>
-                  <input type="email" required class="nord-form-input" id="nord-email" placeholder="v.smith@example.co.uk">
+                  <input type="email" required class="svs-form-input" id="nord-email" placeholder="fiona.c@example.co.uk">
                 </div>
               </div>
 
               <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
-                <div class="nord-form-group">
+                <div class="svs-form-group">
                   <label>Phone / WhatsApp *</label>
-                  <input type="tel" required class="nord-form-input" id="nord-phone" placeholder="+44 7700 900123">
+                  <input type="tel" required class="svs-form-input" id="nord-phone" placeholder="07700 900555">
                 </div>
-                <div class="nord-form-group">
-                  <label>Height & Weight (Clinic Requirement)</label>
-                  <input type="text" class="nord-form-input" id="nord-height-weight" placeholder="e.g. 170 cm / 65 kg">
+                <div class="svs-form-group">
+                  <label>Payment / Registration Preference</label>
+                  <select class="svs-form-select" id="svs-plan-pref">
+                    <option value="0% Chrysalis Finance">0% Chrysalis Finance (Spread over 12-36 mo)</option>
+                    <option value="Private Pay-as-you-go">Private Pay-as-you-go</option>
+                    <option value="NHS Registration / General Care">NHS Registration / General Care</option>
+                  </select>
                 </div>
               </div>
 
-              <div class="nord-form-group">
-                <label>Medical Goals or Prior Surgeries</label>
-                <textarea class="nord-form-textarea" id="nord-notes" rows="2" placeholder="Tell our surgeons about your cosmetic goals, questions, or target travel month..."></textarea>
+              <div class="svs-form-group">
+                <label>Dental Notes or Questions</label>
+                <textarea class="svs-form-textarea" id="nord-notes" rows="2" placeholder="Tell our team about your smile goals, concerns, or previous dental work..."></textarea>
               </div>
 
-              <button type="submit" class="nord-submit-btn">
-                <span>Confirm Consultation & Lock Date</span>
+              <button type="submit" class="svs-submit-btn">
+                <span>Confirm Appointment & Lock Date</span>
                 <span style="font-size: 16px;">&rarr;</span>
               </button>
-              <p style="font-size: 11px; color: #64748b; text-align: center; margin-top: 10px;">🔒 EU Patient Confidentiality (GDPR). Evaluated directly by Kaunas surgical coordinators.</p>
+              <p style="font-size: 11px; color: #64748b; text-align: center; margin-top: 10px;">🔒 Regulated by GDC & Healthcare Improvement Scotland. Confidential clinical intake.</p>
             </form>
           </div>
 
-          <!-- 2. OFFICIAL CALCULATOR VIEW -->
+          <!-- 2. FINANCE CALCULATOR VIEW -->
           <div id="view-calculator" style="display: none;">
-            <p style="font-size: 13px; color: #94a3b8; margin-bottom: 12px;">
-              Nordesthetics' official 2026 combined surgery pricing calculator. Calculate multi-procedure bundle discounts and instant estimates.
+            <h3 style="font-size: 17px; font-weight: 700; margin-bottom: 8px;">Chrysalis 0% APR Dental Finance Calculator</h3>
+            <p style="font-size: 13px; color: #94a3b8; margin-bottom: 16px; line-height: 1.5;">
+              St Vincent Smile is an Appointed Representative of Chrysalis Finance Limited. Spread the cost of your smile transformation with 0% interest over 12 months, or up to 36 months with low monthly repayments.
             </p>
-            <div style="position: relative; width: 100%; height: 500px; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.12); background: #000;">
-              <iframe src="https://calcnewplast.lovable.app/" style="width: 100%; height: 100%; border: none;" allowfullscreen></iframe>
+            
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 20px;">
+              <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 16px; text-align: center;">
+                <div style="font-size: 11px; color: #94a3b8; text-transform: uppercase; font-weight: 600; margin-bottom: 4px;">Invisalign Full</div>
+                <div style="font-size: 20px; font-weight: 700; color: #38bdf8;">£208.33<span style="font-size: 11px; font-weight: 400; color: #94a3b8;">/mo</span></div>
+                <div style="font-size: 11px; color: #34d399; margin-top: 4px;">12 months @ 0% APR</div>
+                <div style="font-size: 10px; color: #64748b; margin-top: 2px;">Total: £2,500 (Inc. Vivera)</div>
+              </div>
+              <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 16px; text-align: center;">
+                <div style="font-size: 11px; color: #94a3b8; text-transform: uppercase; font-weight: 600; margin-bottom: 4px;">Implant & Crown</div>
+                <div style="font-size: 20px; font-weight: 700; color: #38bdf8;">£231.25<span style="font-size: 11px; font-weight: 400; color: #94a3b8;">/mo</span></div>
+                <div style="font-size: 11px; color: #34d399; margin-top: 4px;">12 months @ 0% APR</div>
+                <div style="font-size: 10px; color: #64748b; margin-top: 2px;">Total: £2,775 (Swiss Titanium)</div>
+              </div>
+              <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 16px; text-align: center;">
+                <div style="font-size: 11px; color: #94a3b8; text-transform: uppercase; font-weight: 600; margin-bottom: 4px;">Bonding 6 Teeth</div>
+                <div style="font-size: 20px; font-weight: 700; color: #38bdf8;">£150.00<span style="font-size: 11px; font-weight: 400; color: #94a3b8;">/mo</span></div>
+                <div style="font-size: 11px; color: #34d399; margin-top: 4px;">12 months @ 0% APR</div>
+                <div style="font-size: 10px; color: #64748b; margin-top: 2px;">Total: £1,800 (Same-Day)</div>
+              </div>
             </div>
-            <button class="nord-submit-btn" id="calc-back-to-booking" style="margin-top: 14px;">Return to Booking Calendar &rarr;</button>
+
+            <button class="svs-submit-btn" id="calc-back-to-booking" style="margin-top: 14px;">Return to Appointment Calendar &rarr;</button>
           </div>
 
-          <!-- 3. WHATSAPP FAST-TRACK VIEW -->
+          <!-- 3. WHATSAPP RECEPTION VIEW -->
           <div id="view-whatsapp" style="display: none; text-align: center; padding: 20px 0;">
             <div style="width: 64px; height: 64px; border-radius: 50%; background: rgba(37, 211, 102, 0.15); border: 1px solid rgba(37, 211, 102, 0.3); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-size: 28px;">
               💬
             </div>
-            <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 8px;">Direct Clinic Coordinator Line</h3>
-            <p style="font-size: 13px; color: #94a3b8; max-width: 420px; margin: 0 auto 20px; line-height: 1.5;">
-              Connect immediately with a Nordesthetics patient coordinator at Kaunas Hospital. Average response time under 15 minutes during clinic hours (Mon–Fri 9:00–18:00 GMT+2).
+            <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 8px;">Direct St Vincent Smile Reception</h3>
+            <p style="font-size: 13px; color: #94a3b8; max-width: 440px; margin: 0 auto 20px; line-height: 1.5;">
+              Chat directly with our Finnieston dental reception team for appointments, emergency slots, or quick questions. Average response within 10 minutes during clinic opening hours.
             </p>
             <div style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 16px; max-width: 380px; margin: 0 auto 24px; text-align: left; font-size: 13px;">
-              <div style="color: #94a3b8; margin-bottom: 4px;">Kaunas Hospital WhatsApp:</div>
-              <div style="font-size: 16px; font-weight: 700; color: #ffffff;">+370 652 62092</div>
-              <div style="color: #94a3b8; margin-top: 8px; margin-bottom: 4px;">UK Direct Inquiries:</div>
-              <div style="font-size: 16px; font-weight: 700; color: #ffffff;">+44 203 949 5522</div>
+              <div style="color: #94a3b8; margin-bottom: 4px;">Direct WhatsApp Reception:</div>
+              <div style="font-size: 16px; font-weight: 700; color: #ffffff;">+44 7761 066850</div>
+              <div style="color: #94a3b8; margin-top: 8px; margin-bottom: 4px;">Clinic Telephone:</div>
+              <div style="font-size: 16px; font-weight: 700; color: #ffffff;">0141 248 1183</div>
+              <div style="color: #94a3b8; margin-top: 8px; margin-bottom: 4px;">Practice Address:</div>
+              <div style="font-size: 13px; color: #ffffff;">23c St Vincent Crescent, Glasgow G3 8LH</div>
             </div>
-            <a href="https://api.whatsapp.com/send?phone=37065262092&text=Hello%20Nordesthetics%2C%20I%20would%20like%20to%20schedule%20a%20surgical%20consultation" target="_blank" rel="noopener noreferrer" class="nord-submit-btn" style="text-decoration: none; max-width: 380px; margin: 0 auto; background: #25D366; color: #ffffff;">
+            <a href="https://wa.me/447761066850" target="_blank" rel="noopener noreferrer" class="svs-submit-btn" style="text-decoration: none; max-width: 380px; margin: 0 auto; background: #25D366; color: #ffffff;">
               <span>Open WhatsApp Chat Now</span>
               <span>&rarr;</span>
             </a>
@@ -875,48 +898,48 @@
 
           <!-- SUCCESS VOUCHER VIEW -->
           <div id="nord-consultation-success" style="display: none;">
-            <div class="nord-success-card">
+            <div class="svs-success-card">
               <div style="width: 52px; height: 52px; border-radius: 50%; background: rgba(52, 211, 153, 0.2); border: 1px solid rgba(52, 211, 153, 0.4); display: flex; align-items: center; justify-content: center; margin: 0 auto 12px; font-size: 24px; color: #34d399;">
                 ✓
               </div>
-              <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 4px;">Consultation Slot Reserved</h3>
+              <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 4px;">Appointment Confirmed</h3>
               <p style="font-size: 13px; color: #94a3b8; margin-bottom: 16px;">
-                Your request has been routed to Kaunas surgical coordination. You will receive an official confirmation via WhatsApp & Email.
+                Your appointment at St Vincent Smile has been booked. A confirmation has been prepared for your records.
               </p>
 
-              <div class="nord-voucher-box">
-                <div class="nord-voucher-row">
-                  <span class="nord-voucher-label">Patient Name:</span>
-                  <span class="nord-voucher-val" id="voucher-name">Victoria Smith</span>
+              <div class="svs-voucher-box">
+                <div class="svs-voucher-row">
+                  <span class="svs-voucher-label">Patient Name:</span>
+                  <span class="svs-voucher-val" id="voucher-name">Fiona Campbell</span>
                 </div>
-                <div class="nord-voucher-row">
-                  <span class="nord-voucher-label">Procedure:</span>
-                  <span class="nord-voucher-val" id="voucher-procedure">Tummy Tuck</span>
+                <div class="svs-voucher-row">
+                  <span class="svs-voucher-label">Treatment:</span>
+                  <span class="svs-voucher-val" id="voucher-procedure">Invisalign® Clear Aligners</span>
                 </div>
-                <div class="nord-voucher-row">
-                  <span class="nord-voucher-label">Assigned Surgeon:</span>
-                  <span class="nord-voucher-val" id="voucher-doctor">Dr. Jonas Tutkus</span>
+                <div class="svs-voucher-row">
+                  <span class="svs-voucher-label">Clinician:</span>
+                  <span class="svs-voucher-val" id="voucher-doctor">Dr. Umer (Diamond Apex)</span>
                 </div>
-                <div class="nord-voucher-row">
-                  <span class="nord-voucher-label">Reserved Date & Slot:</span>
-                  <span class="nord-voucher-val" id="voucher-slot">Thu, Nov 12 · 11:00 AM (GMT+2)</span>
+                <div class="svs-voucher-row">
+                  <span class="svs-voucher-label">Date & Time Slot:</span>
+                  <span class="svs-voucher-val" id="voucher-slot">Thu, Nov 12 · 10:30 AM</span>
                 </div>
-                <div class="nord-voucher-row">
-                  <span class="nord-voucher-label">Format:</span>
-                  <span class="nord-voucher-val" id="voucher-track">Free 3D Crisalix Video Consultation</span>
+                <div class="svs-voucher-row">
+                  <span class="svs-voucher-label">Location:</span>
+                  <span class="svs-voucher-val">23c St Vincent Crescent, Finnieston, Glasgow G3 8LH</span>
                 </div>
               </div>
 
               <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 14px;">
-                <a id="nord-add-gcal" href="#" target="_blank" rel="noopener noreferrer" class="nord-submit-btn" style="margin-top: 0; font-size: 12px; text-decoration: none; background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.15);">
+                <a id="nord-add-gcal" href="#" target="_blank" rel="noopener noreferrer" class="svs-submit-btn" style="margin-top: 0; font-size: 12px; text-decoration: none; background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.15);">
                   📅 Add to Google Cal
                 </a>
-                <a id="nord-wa-confirm" href="https://api.whatsapp.com/send?phone=37065262092" target="_blank" rel="noopener noreferrer" class="nord-submit-btn" style="margin-top: 0; font-size: 12px; text-decoration: none; background: #25D366; color: #fff;">
-                  💬 WhatsApp Notify
+                <a id="nord-wa-confirm" href="https://wa.me/447761066850" target="_blank" rel="noopener noreferrer" class="svs-submit-btn" style="margin-top: 0; font-size: 12px; text-decoration: none; background: #25D366; color: #fff;">
+                  💬 WhatsApp Reception
                 </a>
               </div>
 
-              <button class="nord-submit-btn" id="nord-success-done" style="margin-top: 12px; background: #ffffff; color: #000;">
+              <button class="svs-submit-btn" id="nord-success-done" style="margin-top: 12px; background: #ffffff; color: #000;">
                 Done
               </button>
             </div>
@@ -926,44 +949,41 @@
       </div>
 
       <!-- Legal & Privacy Modal -->
-      <div id="nord-legal-modal" class="nord-modal-backdrop">
-        <div class="nord-modal-card">
-          <button class="nord-modal-close" id="nord-close-legal">&times;</button>
+      <div id="nord-legal-modal" class="svs-modal-backdrop">
+        <div class="svs-modal-card">
+          <button class="svs-modal-close" id="nord-close-legal">&times;</button>
           <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
-            <img src="./assets/nord_og_logo.png" style="height: 24px; filter: brightness(0) invert(1);">
-            <span style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: #38bdf8; font-weight: 700;">Legal & Patient Governance</span>
+            <img src="./assets/svs_logo_navy.png" style="height: 24px; filter: brightness(0) invert(1);">
+            <span style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: #38bdf8; font-weight: 700;">Scottish Healthcare & Clinical Governance</span>
           </div>
           
-          <div class="nord-tabs">
-            <button class="nord-tab-btn active" data-tab="privacy">Privacy & GDPR</button>
-            <button class="nord-tab-btn" data-tab="terms">Patient Charter</button>
-            <button class="nord-tab-btn" data-tab="accessibility">Accessibility</button>
+          <div class="svs-mode-tabs">
+            <button class="svs-tab-btn active" data-tab="privacy">Privacy & UK GDPR</button>
+            <button class="svs-tab-btn" data-tab="terms">Patient Charter</button>
+            <button class="svs-tab-btn" data-tab="accessibility">Accessibility</button>
           </div>
 
-          <div id="legal-content-privacy" class="nord-legal-tab-pane">
-            <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 12px;">EU Medical Data & GDPR Protection</h3>
+          <div id="legal-content-privacy" class="svs-legal-tab-pane">
+            <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 12px;">UK Data Protection Act 2018 & Medical Privacy</h3>
             <p style="font-size: 13px; color: #cbd5e1; line-height: 1.6; margin-bottom: 14px;">
-              Nordesthetics Clinic (Kaunakiemio str. 1a, Kaunas, Lithuania) complies fully with Regulation (EU) 2016/679 (General Data Protection Regulation) and Lithuanian healthcare privacy directives. All medical records, Crisalix 3D body scans, and surgeon consultation notes are encrypted with AES-256 standard.
-            </p>
-            <p style="font-size: 13px; color: #cbd5e1; line-height: 1.6; margin-bottom: 14px;">
-              We never share or commercialize patient information. Medical photos transmitted for preliminary surgical assessment are retained exclusively within our certified clinical coordination repository and can be deleted upon patient request.
+              Saint Vincent Smile Centre Limited trading as St Vincent Smile (23c St Vincent Crescent, Finnieston, Glasgow G3 8LH) complies strictly with the UK General Data Protection Regulation (UK GDPR) and Data Protection Act 2018. All patient records, digital 3D iTero impressions, and CBCT radiographs are encrypted and stored in certified UK clinical systems.
             </p>
           </div>
 
-          <div id="legal-content-terms" class="nord-legal-tab-pane" style="display: none;">
-            <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 12px;">European Patient Charter & Treatment Terms</h3>
+          <div id="legal-content-terms" class="svs-legal-tab-pane" style="display: none;">
+            <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 12px;">General Dental Council (GDC) & HIS Regulation</h3>
             <p style="font-size: 13px; color: #cbd5e1; line-height: 1.6; margin-bottom: 14px;">
-              All surgical procedures are performed in our licensed Kaunas surgical hospital in accordance with European Union healthcare standards. Full package prices include all surgeon fees, anesthesiology, post-operative hospital stay, 24/7 personal nursing care, medication, compression garments, and Kaunas/Vilnius airport transfers.
+              All dental surgeons, therapists, and hygienists practicing at St Vincent Smile are fully registered with the General Dental Council (GDC). Our clinic operates under the clinical standards of Healthcare Improvement Scotland (HIS).
             </p>
             <p style="font-size: 13px; color: #cbd5e1; line-height: 1.6; margin-bottom: 14px;">
-              Revision policy: Nordesthetics provides guaranteed revision surgery coverage in accordance with our formal aftercare protocol for up to 12 months following primary surgery.
+              Finance Disclosure: Saint Vincent Smile Centre Limited is an Appointed Representative of Chrysalis Finance Limited, which is authorised and regulated by the Financial Conduct Authority (FCA).
             </p>
           </div>
 
-          <div id="legal-content-accessibility" class="nord-legal-tab-pane" style="display: none;">
+          <div id="legal-content-accessibility" class="svs-legal-tab-pane" style="display: none;">
             <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 12px;">Web Accessibility Standards (WCAG 2.1 AA)</h3>
             <p style="font-size: 13px; color: #cbd5e1; line-height: 1.6; margin-bottom: 14px;">
-              This digital flagship is engineered to conform with Level AA of the World Wide Web Consortium (W3C) Web Content Accessibility Guidelines 2.1. We enforce full keyboard navigability, high color contrast ratios, screen-reader friendly DOM hierarchies, and reduced motion preferences across all platforms.
+              This digital clinic experience conforms with Level AA of the W3C Web Content Accessibility Guidelines 2.1. Designed with high color contrast, screen reader compatibility, and full keyboard navigation.
             </p>
           </div>
         </div>
@@ -971,7 +991,7 @@
     `;
 
     var modalContainer = document.createElement('div');
-    modalContainer.id = 'nord-modals-root';
+    modalContainer.id = 'svs-modals-root';
     modalContainer.innerHTML = modalHtml;
     document.body.appendChild(modalContainer);
 
@@ -979,13 +999,13 @@
     var legalModal = document.getElementById('nord-legal-modal');
 
     var calState = {
-      doctor: 'Dr. Jonas Tutkus',
-      track: 'Free 3D Crisalix Video Consultation',
-      procedure: 'Tummy Tuck (Abdominoplasty)',
+      doctor: 'Dr. Umer',
+      track: 'Free Invisalign 3D iTero Consultation',
+      procedure: 'Invisalign® Clear Aligners (Diamond Apex)',
       year: 2026,
       month: 10,
       selectedDay: 12,
-      selectedSlot: '11:00 AM (GMT+2)',
+      selectedSlot: '10:30 AM',
       name: '',
       email: '',
       phone: ''
@@ -1010,18 +1030,18 @@
 
       for (var i = 0; i < firstDayIndex; i++) {
         var blank = document.createElement('div');
-        blank.className = 'nord-day-cell disabled';
+        blank.className = 'svs-day-cell disabled';
         grid.appendChild(blank);
       }
 
       for (var day = 1; day <= totalDays; day++) {
         var cell = document.createElement('div');
-        cell.className = 'nord-day-cell';
+        cell.className = 'svs-day-cell';
         cell.textContent = day;
 
         var cellDate = new Date(calState.year, calState.month, day);
         var dayOfWeek = cellDate.getDay();
-        if (dayOfWeek !== 0) {
+        if (dayOfWeek !== 0) { // Monday to Saturday
           cell.classList.add('has-slots');
         } else {
           cell.classList.add('disabled');
@@ -1076,25 +1096,25 @@
       renderCalendar();
     });
 
-    document.querySelectorAll('.nord-slot-pill').forEach(function(pill) {
+    document.querySelectorAll('.svs-slot-pill').forEach(function(pill) {
       pill.addEventListener('click', function() {
-        document.querySelectorAll('.nord-slot-pill').forEach(function(p) { p.classList.remove('active'); });
+        document.querySelectorAll('.svs-slot-pill').forEach(function(p) { p.classList.remove('active'); });
         pill.classList.add('active');
         calState.selectedSlot = pill.getAttribute('data-slot');
       });
     });
 
-    document.querySelectorAll('.nord-doc-pill').forEach(function(pill) {
+    document.querySelectorAll('.svs-doc-pill').forEach(function(pill) {
       pill.addEventListener('click', function() {
-        document.querySelectorAll('.nord-doc-pill').forEach(function(p) { p.classList.remove('active'); });
+        document.querySelectorAll('.svs-doc-pill').forEach(function(p) { p.classList.remove('active'); });
         pill.classList.add('active');
         calState.doctor = pill.getAttribute('data-doctor');
       });
     });
 
-    document.querySelectorAll('.nord-track-item').forEach(function(item) {
+    document.querySelectorAll('.svs-track-item').forEach(function(item) {
       item.addEventListener('click', function() {
-        document.querySelectorAll('.nord-track-item').forEach(function(it) { it.classList.remove('active'); });
+        document.querySelectorAll('.svs-track-item').forEach(function(it) { it.classList.remove('active'); });
         item.classList.add('active');
         calState.track = item.getAttribute('data-track');
       });
@@ -1135,7 +1155,7 @@
     function openConsultation(preset) {
       consultModal.classList.add('active');
       document.body.style.overflow = 'hidden';
-      var modeTabs = document.querySelector('.nord-mode-tabs');
+      var modeTabs = document.querySelector('.svs-mode-tabs');
       if (modeTabs) modeTabs.style.display = 'flex';
       switchMode('calendar');
       renderCalendar();
@@ -1155,7 +1175,7 @@
         }
       }
       if (preset && preset.doctor) {
-        document.querySelectorAll('.nord-doc-pill').forEach(function(pill) {
+        document.querySelectorAll('.svs-doc-pill').forEach(function(pill) {
           if (pill.getAttribute('data-doctor').toLowerCase().includes(preset.doctor.toLowerCase())) {
             pill.click();
           }
@@ -1173,9 +1193,9 @@
 
     document.getElementById('nord-consultation-form').addEventListener('submit', function(e) {
       e.preventDefault();
-      calState.name = document.getElementById('nord-name').value || 'Victoria Smith';
-      calState.email = document.getElementById('nord-email').value || 'v.smith@example.co.uk';
-      calState.phone = document.getElementById('nord-phone').value || '+44 7700 900123';
+      calState.name = document.getElementById('nord-name').value || 'Fiona Campbell';
+      calState.email = document.getElementById('nord-email').value || 'fiona.c@example.co.uk';
+      calState.phone = document.getElementById('nord-phone').value || '07700 900555';
       calState.procedure = document.getElementById('nord-procedure-select').value;
 
       var d = new Date(calState.year, calState.month, calState.selectedDay);
@@ -1186,18 +1206,18 @@
       document.getElementById('voucher-procedure').textContent = calState.procedure;
       document.getElementById('voucher-doctor').textContent = calState.doctor;
       document.getElementById('voucher-slot').textContent = fullDateStr + ' · ' + calState.selectedSlot;
-      document.getElementById('voucher-track').textContent = calState.track;
 
-      var gcalTitle = encodeURIComponent('Nordesthetics Surgical Consultation: ' + calState.procedure + ' with ' + calState.doctor);
-      var gcalDetails = encodeURIComponent('Consultation with ' + calState.doctor + ' at Nordesthetics Clinic.\nPatient: ' + calState.name + '\nProcedure: ' + calState.procedure + '\nFormat: ' + calState.track + '\nContact: +370 652 62092');
-      var gcalUrl = 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=' + gcalTitle + '&details=' + gcalDetails + '&location=' + encodeURIComponent('Nordesthetics Clinic, Kaunakiemio str. 1a, Kaunas, Lithuania');
+      var gcalTitle = encodeURIComponent('St Vincent Smile Appointment: ' + calState.procedure + ' with ' + calState.doctor);
+      var gcalDetails = encodeURIComponent('Appointment at St Vincent Smile Glasgow.\nPatient: ' + calState.name + '\nTreatment: ' + calState.procedure + '\nFormat: ' + calState.track + '\nContact: 0141 248 1183');
+      var gcalUrl = 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=' + gcalTitle + '&details=' + gcalDetails + '&location=' + encodeURIComponent('St Vincent Smile, 23c St Vincent Crescent, Finnieston, Glasgow G3 8LH');
       document.getElementById('nord-add-gcal').setAttribute('href', gcalUrl);
 
-      var waMsg = encodeURIComponent('Hello Nordesthetics Coordinator, I have booked a ' + calState.track + ' on ' + fullDateStr + ' at ' + calState.selectedSlot + ' with ' + calState.doctor + ' for ' + calState.procedure + '. Patient Name: ' + calState.name + '.');
-      document.getElementById('nord-wa-confirm').setAttribute('href', 'https://api.whatsapp.com/send?phone=37065262092&text=' + waMsg);
+      var waMsg = encodeURIComponent('Hello St Vincent Smile Reception, I have booked a ' + calState.track + ' on ' + fullDateStr + ' at ' + calState.selectedSlot + ' with ' + calState.doctor + ' for ' + calState.procedure + '. Patient Name: ' + calState.name + '.');
+      document.getElementById('nord-wa-confirm').setAttribute('href', 'https://wa.me/447761066850?text=' + waMsg);
 
       document.getElementById('view-calendar').style.display = 'none';
-      document.querySelector('.nord-mode-tabs').style.display = 'none';
+      var modeTabs = document.querySelector('.svs-mode-tabs');
+      if (modeTabs) modeTabs.style.display = 'none';
       document.getElementById('nord-consultation-success').style.display = 'block';
     });
 
@@ -1215,16 +1235,16 @@
     }
 
     function switchLegalTab(tab) {
-      document.querySelectorAll('.nord-tab-btn').forEach(function(btn) {
+      document.querySelectorAll('.svs-tab-btn').forEach(function(btn) {
         btn.classList.toggle('active', btn.getAttribute('data-tab') === tab);
       });
-      document.querySelectorAll('.nord-legal-tab-pane').forEach(function(pane) {
+      document.querySelectorAll('.svs-legal-tab-pane').forEach(function(pane) {
         pane.style.display = pane.id === ('legal-content-' + tab) ? 'block' : 'none';
       });
     }
 
     document.getElementById('nord-close-legal').addEventListener('click', closeLegal);
-    document.querySelectorAll('.nord-tab-btn').forEach(function(btn) {
+    document.querySelectorAll('.svs-tab-btn').forEach(function(btn) {
       btn.addEventListener('click', function() {
         switchLegalTab(btn.getAttribute('data-tab'));
       });
@@ -1237,7 +1257,7 @@
       var text = btn.innerText.trim();
       var href = btn.getAttribute('href') || '';
 
-      if (text.includes('Consultation') || text.includes('Request time') || text.includes('Book with a specialist') || text.includes('Live availability') || (href === '#contact' && !btn.closest('nav'))) {
+      if (text.includes('Consultation') || text.includes('Request time') || text.includes('Book') || text.includes('Appointment') || text.includes('Live availability') || (href === '#contact' && !btn.closest('nav'))) {
         e.preventDefault();
         openConsultation();
         return;
