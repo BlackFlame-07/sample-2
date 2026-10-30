@@ -193,14 +193,64 @@
     }
 
     // 8. Specialists Doctor Tabs
-    var doctorPhotos = [
-      './assets/svs_doctor_umer.jpg',
-      './assets/svs_interior_chair.jpg',
-      './assets/svs_hero_surgery.jpg',
-      './assets/svs_reception.jpg'
+    var specialistsData = [
+      {
+        name: 'Dr. Umer',
+        role: 'Principal Dentist & Diamond Apex Provider',
+        photo: './assets/svs_doctor_umer.jpg',
+        alt: 'Dr. Umer · Principal Dentist & Diamond Apex Invisalign Provider',
+        bio: 'Dr. Umer has treated thousands of smile patients over 18+ years of private practice in Glasgow. As a certified Diamond Apex Invisalign provider, he specializes in complex alignment, bespoke composite bonding, and restorative implants with gentle care.',
+        experience: '18+ years',
+        languages: 'English, Urdu',
+        inStudio: 'Mon, Tue, Thu',
+        rating: '4.9',
+        reviews: '312 reviews'
+      },
+      {
+        name: 'Dr. Jacqueline Eow',
+        role: 'General Dentist & Facial Aesthetics',
+        photo: './assets/svs_doctor_jacqueline.jpg',
+        alt: 'Dr. Jacqueline Eow · General Dentist & Facial Aesthetics',
+        bio: 'Dr. Jacqueline Eow provides general and restorative dental care with specialized clinical focus in root canal treatments, aesthetic crowns, and delicate facial aesthetics. Known for a gentle, calming approach that puts nervous patients at complete ease.',
+        experience: '11 years',
+        languages: 'English, Cantonese',
+        inStudio: 'Wed, Fri, Sat',
+        rating: '5.0',
+        reviews: '184 reviews'
+      },
+      {
+        name: 'Dr. Harry Connor',
+        role: 'General & Cosmetic Dentist',
+        photo: './assets/svs_doctor_harry.jpg',
+        alt: 'Dr. Harry Connor · General & Cosmetic Dentist',
+        bio: 'Dr. Harry Connor delivers modern minimally-invasive restorative dentistry, custom tooth-coloured composite bonding, and comprehensive check-ups. He focuses on long-term preventative health and creating natural, balanced smiles.',
+        experience: '8 years',
+        languages: 'English',
+        inStudio: 'Mon, Wed, Fri',
+        rating: '4.9',
+        reviews: '142 reviews'
+      },
+      {
+        name: 'Bronagh & Anisha',
+        role: 'Lead Dental Therapists & Hygiene',
+        photo: './assets/svs_doctor_bronagh.png',
+        alt: 'Bronagh O’Dowd & Anisha Pariyarath · Lead Dental Therapists & Hygiene',
+        bio: 'Our dedicated dental hygiene therapists Bronagh O’Dowd and Anisha Pariyarath deliver gentle Airflow stain removal, deep periodontal therapy, and customized preventive maintenance programs to keep your teeth and gums in pristine health.',
+        experience: '9 years',
+        languages: 'English, Malayalam',
+        inStudio: 'Tue, Thu, Sat',
+        rating: '5.0',
+        reviews: '215 reviews'
+      }
     ];
-    var specButtons = document.querySelectorAll('#specialists button, .framer-t9vo8c button');
+
+    var specButtons = document.querySelectorAll('#specialists [data-framer-name="List"] button');
+    if (!specButtons || specButtons.length === 0) {
+      specButtons = document.querySelectorAll('#specialists button, .framer-t9vo8c button');
+    }
+
     specButtons.forEach(function(btn, idx) {
+      if (idx >= specialistsData.length) return;
       btn.addEventListener('click', function(e) {
         e.preventDefault();
         specButtons.forEach(function(b) {
@@ -212,14 +262,42 @@
         btn.classList.add('framer-v-l7hn10');
         btn.setAttribute('data-framer-name', 'Active');
 
+        var data = specialistsData[idx];
+        if (!data) return;
+
+        // Image swap with smooth opacity fade
         var specImg = document.getElementById('specialist-main-img') || document.querySelector('#specialists img');
-        if (specImg && doctorPhotos[idx]) {
-          specImg.style.transition = 'opacity 0.25s ease';
+        if (specImg && data.photo) {
+          specImg.style.transition = 'opacity 0.22s ease';
           specImg.style.opacity = '0';
           setTimeout(function() {
-            specImg.src = doctorPhotos[idx];
+            specImg.src = data.photo;
+            specImg.alt = data.alt || data.name;
             specImg.style.objectPosition = 'center 15%';
             specImg.style.opacity = '1';
+          }, 180);
+        }
+
+        // Details swap with smooth crossfade
+        var detailPanel = document.querySelector('#specialists [data-framer-name="Detail"]');
+        var bioP = document.querySelector('#specialists .framer-1qbhr2a p');
+        var expP = document.querySelector('#specialists .framer-1glbhae p');
+        var langP = document.querySelector('#specialists .framer-12xqlve p');
+        var studioP = document.querySelector('#specialists .framer-1diyyku p');
+        var ratingP = document.querySelector('#specialists .framer-yk2ukh p');
+        var reviewsP = document.querySelector('#specialists .framer-1yjeujl p');
+
+        if (detailPanel) {
+          detailPanel.style.transition = 'opacity 0.2s ease';
+          detailPanel.style.opacity = '0.3';
+          setTimeout(function() {
+            if (bioP) bioP.textContent = data.bio;
+            if (expP) expP.textContent = data.experience;
+            if (langP) langP.textContent = data.languages;
+            if (studioP) studioP.textContent = data.inStudio;
+            if (ratingP) ratingP.textContent = data.rating;
+            if (reviewsP) reviewsP.textContent = data.reviews;
+            detailPanel.style.opacity = '1';
           }, 180);
         }
       });
