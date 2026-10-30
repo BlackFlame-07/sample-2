@@ -103,8 +103,8 @@
     // 5. Hero Carousel Controls
     var heroSlides = [
       { src: './assets/svs_clinic_wide_5k.jpg', pos: 'center center' },
-      { src: './assets/svs_surgery_cinematic_5k.jpg', pos: 'center center' },
-      { src: './assets/svs_treatment_suite_2k.jpg', pos: 'center center' }
+      { src: './assets/ZAe2RSeRRvptuPbcksJup5EdV_6a3cf915.webp', pos: 'center center' },
+      { src: './assets/hkCLvVNbVvxFIG5ODVbe6sk_56529734.webp', pos: 'center center' }
     ];
     var currentHeroIdx = 0;
     var heroButtons = document.querySelectorAll('#hero [data-framer-name="Ghost"], .framer-59oil5 button');
@@ -197,7 +197,7 @@
       {
         name: 'Dr. Umer',
         role: 'Principal Dentist & Diamond Apex Provider',
-        photo: './assets/svs_doctor_umer.jpg',
+        photo: './assets/LhRdrbEme10eLb0FCf78WEGE_2e97e3f8.webp',
         alt: 'Dr. Umer · Principal Dentist & Diamond Apex Invisalign Provider',
         bio: 'Dr. Umer has treated thousands of smile patients over 18+ years of private practice in Glasgow. As a certified Diamond Apex Invisalign provider, he specializes in complex alignment, bespoke composite bonding, and restorative implants with gentle care.',
         experience: '18+ years',
@@ -209,7 +209,7 @@
       {
         name: 'Dr. Jacqueline Eow',
         role: 'General Dentist & Facial Aesthetics',
-        photo: './assets/svs_doctor_jacqueline.jpg',
+        photo: './assets/i9YV55qg35geFijtWVbcSvyZI_2af79674.webp',
         alt: 'Dr. Jacqueline Eow · General Dentist & Facial Aesthetics',
         bio: 'Dr. Jacqueline Eow provides general and restorative dental care with specialized clinical focus in root canal treatments, aesthetic crowns, and delicate facial aesthetics. Known for a gentle, calming approach that puts nervous patients at complete ease.',
         experience: '11 years',
@@ -221,7 +221,7 @@
       {
         name: 'Dr. Harry Connor',
         role: 'General & Cosmetic Dentist',
-        photo: './assets/svs_doctor_harry.jpg',
+        photo: './assets/TjZGJmXA2itrXL8hlBEh6zV8P_aba0c930.webp',
         alt: 'Dr. Harry Connor · General & Cosmetic Dentist',
         bio: 'Dr. Harry Connor delivers modern minimally-invasive restorative dentistry, custom tooth-coloured composite bonding, and comprehensive check-ups. He focuses on long-term preventative health and creating natural, balanced smiles.',
         experience: '8 years',
@@ -233,7 +233,7 @@
       {
         name: 'Bronagh & Anisha',
         role: 'Lead Dental Therapists & Hygiene',
-        photo: './assets/svs_doctor_bronagh.png',
+        photo: './assets/ZAe2RSeRRvptuPbcksJup5EdV_6a3cf915.webp',
         alt: 'Bronagh O’Dowd & Anisha Pariyarath · Lead Dental Therapists & Hygiene',
         bio: 'Our dedicated dental hygiene therapists Bronagh O’Dowd and Anisha Pariyarath deliver gentle Airflow stain removal, deep periodontal therapy, and customized preventive maintenance programs to keep your teeth and gums in pristine health.',
         experience: '9 years',
