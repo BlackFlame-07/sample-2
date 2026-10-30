@@ -172,7 +172,7 @@
           s.style.transition = 'opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1)';
           s.style.visibility = 'hidden';
           s.style.opacity = '0';
-          s.style.transform = 'translateY(12px)';
+          s.style.transform = 'none';
           s.style.pointerEvents = 'none';
         }
       });
