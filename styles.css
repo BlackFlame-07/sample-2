@@ -1260,3 +1260,7 @@ body:not(.nav-in-hero) [data-framer-name="Book Button"] p {
   color: #ffffff !important;
   --extracted-r6o4lv: #ffffff !important;
 }
+
+
+/* Watermark Suppression */
+.framer-1rcimp6-container, [aria-label*="Visuvate"], [href*="visuvate.com"], [data-f-id="fnode-1930"], [data-f-id="fnode-1931"], [data-f-id="fnode-1932"] { display: none !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; width: 0 !important; height: 0 !important; }
