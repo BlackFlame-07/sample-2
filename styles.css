@@ -1072,3 +1072,19 @@ html.lenis, html.lenis body { height: auto; }
   max-width: 100% !important;
   overflow: hidden !important;
 }
+
+
+/* Doctor Avatar & Team Card Luxury Hover Effects */
+.doc-avatar-thumb {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.framer-TvKZc:hover .doc-avatar-thumb {
+  transform: scale(1.06);
+  border-color: var(--token-606fcb38-b578-4d5e-978a-fdb07a4101f9, #0e5a66) !important;
+  box-shadow: 0 4px 12px rgba(14, 90, 102, 0.2) !important;
+}
+.team-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -8px rgba(12, 26, 29, 0.12) !important;
+  border-color: rgba(14, 90, 102, 0.3) !important;
+}

@@ -192,62 +192,59 @@
       });
     }
 
-    // 8. Specialists Doctor Tabs
+        // 8. Specialists Doctor Tabs (100% Exact OG Aveline Studio Specialists)
     var specialistsData = [
       {
         name: 'Dr. Elena Varga',
         role: 'Cosmetic dentistry',
-        photo: './assets/LhRdrbEme10eLb0FCf78WEGE_2e97e3f8.webp',
+        photo: './assets/LhRdrbEme10eLb0FCf78WEGE_dr_varga.webp',
         alt: 'Dr. Elena Varga · Cosmetic dentistry',
-        bio: 'Dr. Elena Varga treats smile patients with modern ceramic veneers, delicate composite bonding, and preventative aesthetic care. Unhurried appointments where every step is explained.',
+        bio: 'Elena leads our cosmetic work, from whitening to full veneer cases. She plans every smile digitally first, so you can see the result before a single tooth is touched.',
         experience: '12 years',
-        languages: 'English, German',
-        inStudio: 'Mon, Tue, Thu',
+        languages: 'English, Hungarian',
+        inStudio: 'Mon, Wed, Fri',
         rating: '4.9',
-        reviews: '280 reviews'
+        reviews: '312 reviews'
       },
       {
         name: 'Dr. Daniel Costa',
         role: 'Orthodontics',
-        photo: './assets/i9YV55qg35geFijtWVbcSvyZI_2af79674.webp',
+        photo: './assets/i9YV55qg35geFijtWVbcSvyZI_dr_costa.webp',
         alt: 'Dr. Daniel Costa · Orthodontics',
-        bio: 'Dr. Daniel Costa specializes in clear aligners and comprehensive bite correction for adults and teens. Focused on facial harmony and gentle, predictable alignment.',
-        experience: '10 years',
-        languages: 'English, Spanish',
-        inStudio: 'Wed, Fri, Sat',
-        rating: '5.0',
-        reviews: '195 reviews'
+        bio: 'Daniel has straightened more than 1,400 smiles with clear aligners and fixed braces. He is known for realistic timelines and very few surprise extra stages.',
+        experience: '9 years',
+        languages: 'English, Portuguese',
+        inStudio: 'Tue, Thu, Sat',
+        rating: '4.8',
+        reviews: '268 reviews'
       },
       {
         name: 'Dr. Sofia Reyes',
         role: "Children's dentistry",
-        photo: './assets/TjZGJmXA2itrXL8hlBEh6zV8P_aba0c930.webp',
+        photo: './assets/TjZGJmXA2itrXL8hlBEh6zV8PA_dr_reyes.webp',
         alt: "Dr. Sofia Reyes · Children's dentistry",
-        bio: "Dr. Sofia Reyes creates calm, fear-free visits for younger patients. She believes positive first dental experiences build lifelong healthy dental habits without anxiety.",
-        experience: '8 years',
-        languages: 'English, Portuguese',
-        inStudio: 'Mon, Wed, Fri',
+        bio: 'Sofia makes first visits fun and fear-free. Children see her from their first tooth through their teens, with parents in the room for every appointment.',
+        experience: '7 years',
+        languages: 'English, Spanish',
+        inStudio: 'Mon, Tue, Thu',
         rating: '4.9',
-        reviews: '162 reviews'
+        reviews: '204 reviews'
       },
       {
         name: 'Dr. Ryan Okafor',
         role: 'Implants & surgery',
-        photo: './assets/ZAe2RSeRRvptuPbcksJup5EdVE_6a3cf915.webp',
+        photo: './assets/guZzPzCD5moyy6x2UlwrIWlV1yI_dr_okafor.webp',
         alt: 'Dr. Ryan Okafor · Implants & surgery',
-        bio: 'Dr. Ryan Okafor handles precision computer-guided implant placement, delicate extractions, and full smile restorations with surgical mastery and sedation options.',
-        experience: '14 years',
-        languages: 'English, French',
-        inStudio: 'Tue, Thu, Sat',
+        bio: 'Ryan places implants with guided surgery, planned from a 3D scan of your jaw. Most patients return to work the next day with a temporary tooth in place.',
+        experience: '15 years',
+        languages: 'English, Yoruba',
+        inStudio: 'Wed, Thu, Fri',
         rating: '5.0',
-        reviews: '310 reviews'
+        reviews: '176 reviews'
       }
     ];
 
-    var specButtons = document.querySelectorAll('#team [data-framer-name="List"] button, #team button, #specialists button, .framer-t9vo8c button');
-    if (!specButtons || specButtons.length === 0) {
-      specButtons = document.querySelectorAll('#specialists button, .framer-t9vo8c button');
-    }
+        var specButtons = document.querySelectorAll('#team [data-framer-name="List"] button, #team button, .framer-t9vo8c button');
 
     specButtons.forEach(function(btn, idx) {
       if (idx >= specialistsData.length) return;
@@ -257,39 +254,54 @@
           b.classList.remove('framer-v-l7hn10');
           b.classList.add('framer-v-18yegsd');
           b.setAttribute('data-framer-name', 'Default');
+          var thumb = b.querySelector('.doc-avatar-thumb');
+          if (thumb) {
+            thumb.style.borderColor = 'rgba(12, 26, 29, 0.12)';
+            thumb.style.transform = 'scale(1)';
+          }
         });
         btn.classList.remove('framer-v-18yegsd');
         btn.classList.add('framer-v-l7hn10');
         btn.setAttribute('data-framer-name', 'Active');
+        var activeThumb = btn.querySelector('.doc-avatar-thumb');
+        if (activeThumb) {
+          activeThumb.style.borderColor = 'var(--token-606fcb38-b578-4d5e-978a-fdb07a4101f9, #0e5a66)';
+          activeThumb.style.transform = 'scale(1.08)';
+        }
 
         var data = specialistsData[idx];
         if (!data) return;
 
-        // Image swap with smooth opacity fade
-        var specImg = document.getElementById('specialist-main-img') || document.querySelector('#specialists img');
+        // Image swap with smooth opacity fade and scale-down spring effect
+        var specImg = document.getElementById('specialist-main-img') || document.querySelector('#team img, .framer-t9vo8c img');
         if (specImg && data.photo) {
-          specImg.style.transition = 'opacity 0.22s ease';
+          specImg.style.transition = 'opacity 0.22s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1)';
           specImg.style.opacity = '0';
+          specImg.style.transform = 'scale(1.03)';
           setTimeout(function() {
             specImg.src = data.photo;
+            if (specImg.srcset) specImg.srcset = data.photo + ' 1000w';
             specImg.alt = data.alt || data.name;
             specImg.style.objectPosition = 'center 15%';
             specImg.style.opacity = '1';
+            specImg.style.transform = 'none';
           }, 180);
         }
 
         // Details swap with smooth crossfade
-        var detailPanel = document.querySelector('#specialists [data-framer-name="Detail"]');
-        var bioP = document.querySelector('#specialists .framer-1qbhr2a p');
-        var expP = document.querySelector('#specialists .framer-1glbhae p');
-        var langP = document.querySelector('#specialists .framer-12xqlve p');
-        var studioP = document.querySelector('#specialists .framer-1diyyku p');
-        var ratingP = document.querySelector('#specialists .framer-yk2ukh p');
-        var reviewsP = document.querySelector('#specialists .framer-1yjeujl p');
+        var detailPanel = document.querySelector('#team [data-framer-name="Detail"], .framer-t9vo8c [data-framer-name="Detail"]');
+        var bioP = document.querySelector('#team .framer-1qbhr2a p, .framer-t9vo8c .framer-1qbhr2a p');
+        var expP = document.querySelector('#team .framer-1glbhae p, .framer-t9vo8c .framer-1glbhae p');
+        var langP = document.querySelector('#team .framer-12xqlve p, .framer-t9vo8c .framer-12xqlve p');
+        var studioP = document.querySelector('#team .framer-1diyyku p, .framer-t9vo8c .framer-1diyyku p');
+        var ratingP = document.querySelector('#team .framer-yk2ukh p, .framer-t9vo8c .framer-yk2ukh p');
+        var reviewsP = document.querySelector('#team .framer-1yjeujl p, .framer-t9vo8c .framer-1yjeujl p');
 
-        if (detailPanel) {
-          detailPanel.style.transition = 'opacity 0.2s ease';
-          detailPanel.style.opacity = '0.3';
+        if (detailPanel || bioP) {
+          if (detailPanel) {
+            detailPanel.style.transition = 'opacity 0.2s ease';
+            detailPanel.style.opacity = '0.3';
+          }
           setTimeout(function() {
             if (bioP) bioP.textContent = data.bio;
             if (expP) expP.textContent = data.experience;
@@ -297,7 +309,7 @@
             if (studioP) studioP.textContent = data.inStudio;
             if (ratingP) ratingP.textContent = data.rating;
             if (reviewsP) reviewsP.textContent = data.reviews;
-            detailPanel.style.opacity = '1';
+            if (detailPanel) detailPanel.style.opacity = '1';
           }, 180);
         }
       });
@@ -339,11 +351,11 @@
     var yourVisitTitle = bookSec.querySelector('[data-framer-name="Your visit"] p, [data-framer-name="Your visit"]');
 
     var treatments = {
-      'Check-up & cleaning': { name: 'Invisalign® Aligners', doctor: 'Dr. Umer (Diamond Apex)' },
-      'Whitening consultation': { name: 'Dental Implants', doctor: 'Dr. Umer & Surgical Team' },
-      'Aligner consultation': { name: 'Composite Bonding', doctor: 'Cosmetic Dental Team' },
-      'Implant consultation': { name: 'Porcelain Veneers', doctor: 'Dr. Umer' },
-      'Emergency appointment': { name: 'Emergency Dental Relief', doctor: 'Same-Day Dental Team' }
+      'Check-up & cleaning': { name: 'Smile Assessment & Check-up', doctor: 'Dr. Elena Varga' },
+      'Whitening consultation': { name: 'Teeth Whitening Consultation', doctor: 'Dr. Elena Varga' },
+      'Aligner consultation': { name: 'Clear Aligner Assessment', doctor: 'Dr. Daniel Costa' },
+      'Implant consultation': { name: 'Dental Implant Consultation', doctor: 'Dr. Ryan Okafor' },
+      'Emergency appointment': { name: "Pediatric & Family Consultation", doctor: 'Dr. Sofia Reyes' }
     };
 
     optionCards.forEach(function(card) {
@@ -878,21 +890,25 @@
           <div id="view-calendar">
             <label style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: #303d42; font-weight: 500; display: block; margin-bottom: 8px;">Select Clinician / Dentist</label>
             <div class="svs-doctor-select-row" id="nord-doc-selector">
-              <div class="svs-doc-pill active" data-doctor="Dr. Umer">
+              <div class="svs-doc-pill active" data-doctor="Dr. Elena Varga">
+                <img src="./assets/LhRdrbEme10eLb0FCf78WEGE_dr_varga.webp" style="width: 22px; height: 22px; border-radius: 50%; object-fit: cover; object-position: center 20%; flex-shrink: 0;" alt="Dr. Elena Varga" />
                 <span class="doc-dot"></span>
-                <span>Dr. Umer (Principal Dentist · Invisalign Diamond Apex)</span>
+                <span>Dr. Elena Varga (Cosmetic Dentistry)</span>
               </div>
-              <div class="svs-doc-pill" data-doctor="Cosmetic Dental Team">
+              <div class="svs-doc-pill" data-doctor="Dr. Daniel Costa">
+                <img src="./assets/i9YV55qg35geFijtWVbcSvyZI_dr_costa.webp" style="width: 22px; height: 22px; border-radius: 50%; object-fit: cover; object-position: center 20%; flex-shrink: 0;" alt="Dr. Daniel Costa" />
                 <span class="doc-dot"></span>
-                <span>Cosmetic Dental Team (Composite Bonding & Veneers)</span>
+                <span>Dr. Daniel Costa (Orthodontics & Aligners)</span>
               </div>
-              <div class="svs-doc-pill" data-doctor="Implant Specialist Team">
+              <div class="svs-doc-pill" data-doctor="Dr. Sofia Reyes">
+                <img src="./assets/TjZGJmXA2itrXL8hlBEh6zV8PA_dr_reyes.webp" style="width: 22px; height: 22px; border-radius: 50%; object-fit: cover; object-position: center 20%; flex-shrink: 0;" alt="Dr. Sofia Reyes" />
                 <span class="doc-dot"></span>
-                <span>Implant Specialist Team (Swiss Implants & All-on-4)</span>
+                <span>Dr. Sofia Reyes (Pediatric & Family Care)</span>
               </div>
-              <div class="svs-doc-pill" data-doctor="Dental Hygiene Team">
+              <div class="svs-doc-pill" data-doctor="Dr. Ryan Okafor">
+                <img src="./assets/guZzPzCD5moyy6x2UlwrIWlV1yI_dr_okafor.webp" style="width: 22px; height: 22px; border-radius: 50%; object-fit: cover; object-position: center 20%; flex-shrink: 0;" alt="Dr. Ryan Okafor" />
                 <span class="doc-dot"></span>
-                <span>Dental Hygiene Team (Airflow Polish)</span>
+                <span>Dr. Ryan Okafor (Implants & Guided Surgery)</span>
               </div>
             </div>
 
