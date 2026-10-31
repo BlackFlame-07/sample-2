@@ -1088,3 +1088,175 @@ html.lenis, html.lenis body { height: auto; }
   box-shadow: 0 12px 24px -8px rgba(12, 26, 29, 0.12) !important;
   border-color: rgba(14, 90, 102, 0.3) !important;
 }
+
+
+/* ==========================================================================
+   DYNAMIC HERO TRANSPARENT NAVBAR (1:1 Original Aveline Framer Mechanics)
+   ========================================================================== */
+
+/* Base transition properties for buttery-smooth state crossfade */
+.framer-1mwbh4g {
+  transition: background-color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              backdrop-filter 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              -webkit-backdrop-filter 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s ease,
+              box-shadow 0.35s ease !important;
+}
+
+.framer-1hknmid img {
+  transition: filter 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.framer-1bg14xz p,
+.framer-7py451 p,
+.framer-yn73n5 a p,
+.framer-1ku2z5z p {
+  transition: color 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease !important;
+}
+
+.framer-1d4lrse,
+[data-framer-name="Book Button"] {
+  transition: background-color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.2s ease !important;
+}
+
+.framer-1d4lrse p,
+[data-framer-name="Book Button"] p {
+  transition: color 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* --------------------------------------------------------------------------
+   STATE 1: IN HERO SECTION (TRANSPARENT FLOATING BAR)
+   -------------------------------------------------------------------------- */
+.nav-in-hero .framer-1mwbh4g,
+.framer-xz9jp0-container.nav-in-hero .framer-1mwbh4g,
+.framer-1mwbh4g.nav-in-hero {
+  background-color: transparent !important;
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-bottom: 0px solid transparent !important;
+  border-bottom-color: transparent !important;
+  --border-color: transparent !important;
+  --border-bottom-width: 0px !important;
+  box-shadow: none !important;
+}
+
+/* White Logo & Mark in Hero */
+.nav-in-hero .framer-1hknmid img,
+.framer-xz9jp0-container.nav-in-hero .framer-1hknmid img {
+  filter: brightness(0) invert(1) !important;
+}
+
+.nav-in-hero .framer-1bg14xz p,
+.framer-xz9jp0-container.nav-in-hero .framer-1bg14xz p {
+  color: #ffffff !important;
+  --extracted-r6o4lv: #ffffff !important;
+  --framer-text-color: #ffffff !important;
+}
+
+.nav-in-hero .framer-7py451 p,
+.framer-xz9jp0-container.nav-in-hero .framer-7py451 p {
+  color: rgba(255, 255, 255, 0.78) !important;
+  --extracted-r6o4lv: rgba(255, 255, 255, 0.78) !important;
+  --framer-text-color: rgba(255, 255, 255, 0.78) !important;
+}
+
+/* White Navigation Links in Hero */
+.nav-in-hero .framer-yn73n5 a,
+.nav-in-hero .framer-yn73n5 a p,
+.framer-xz9jp0-container.nav-in-hero .framer-yn73n5 a p {
+  color: #ffffff !important;
+  --extracted-r6o4lv: #ffffff !important;
+  --framer-text-color: #ffffff !important;
+}
+
+.nav-in-hero .framer-yn73n5 a:hover p,
+.framer-xz9jp0-container.nav-in-hero .framer-yn73n5 a:hover p {
+  color: rgba(255, 255, 255, 0.8) !important;
+  --framer-text-color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Status Pill in Hero */
+.nav-in-hero .framer-1ku2z5z p,
+.framer-xz9jp0-container.nav-in-hero .framer-1ku2z5z p {
+  color: rgba(255, 255, 255, 0.8) !important;
+  --extracted-r6o4lv: rgba(255, 255, 255, 0.8) !important;
+  --framer-text-color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* White Pill CTA Button in Hero */
+.nav-in-hero .framer-1d4lrse,
+.nav-in-hero [data-framer-name="Book Button"],
+.framer-xz9jp0-container.nav-in-hero .framer-1d4lrse {
+  background-color: #ffffff !important;
+  color: #0c1a1d !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12) !important;
+}
+
+.nav-in-hero .framer-1d4lrse p,
+.nav-in-hero [data-framer-name="Book Button"] p,
+.framer-xz9jp0-container.nav-in-hero .framer-1d4lrse p {
+  color: #0c1a1d !important;
+  --extracted-r6o4lv: #0c1a1d !important;
+  --framer-text-color: #0c1a1d !important;
+}
+
+.nav-in-hero .framer-1d4lrse:hover,
+.nav-in-hero [data-framer-name="Book Button"]:hover,
+.framer-xz9jp0-container.nav-in-hero .framer-1d4lrse:hover {
+  background-color: rgba(255, 255, 255, 0.92) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18) !important;
+}
+
+/* Mobile Hamburger Menu Bars in Hero */
+.nav-in-hero .framer-14kvokj,
+.nav-in-hero .framer-1hrzy3j,
+.nav-in-hero .framer-sfgoks,
+.nav-in-hero .framer-1c9x0jh {
+  background-color: #ffffff !important;
+}
+
+/* --------------------------------------------------------------------------
+   STATE 2: SCROLLED PAST HERO (SOLID FROSTED LUXURY BAR)
+   -------------------------------------------------------------------------- */
+body:not(.nav-in-hero) .framer-1mwbh4g {
+  background-color: rgba(243, 245, 244, 0.8) !important;
+  backdrop-filter: blur(18px) !important;
+  -webkit-backdrop-filter: blur(18px) !important;
+  border-bottom: 1px solid var(--token-b9bc1439-f852-4cff-82fa-2db9c9461c56) !important;
+}
+
+body:not(.nav-in-hero) .framer-1hknmid img {
+  filter: none !important;
+}
+
+body:not(.nav-in-hero) .framer-1bg14xz p {
+  color: var(--token-5c696cea-9b0e-49da-8923-0dc909c3e527, #0c1a1d) !important;
+  --extracted-r6o4lv: var(--token-5c696cea-9b0e-49da-8923-0dc909c3e527, #0c1a1d) !important;
+}
+
+body:not(.nav-in-hero) .framer-7py451 p {
+  color: var(--token-5c696cea-9b0e-49da-8923-0dc909c3e527, #0c1a1d) !important;
+  --extracted-r6o4lv: var(--token-5c696cea-9b0e-49da-8923-0dc909c3e527, #0c1a1d) !important;
+}
+
+body:not(.nav-in-hero) .framer-yn73n5 a p {
+  color: var(--token-5c696cea-9b0e-49da-8923-0dc909c3e527, #0c1a1d) !important;
+  --extracted-r6o4lv: var(--token-5c696cea-9b0e-49da-8923-0dc909c3e527, #0c1a1d) !important;
+}
+
+body:not(.nav-in-hero) .framer-1d4lrse,
+body:not(.nav-in-hero) [data-framer-name="Book Button"] {
+  background-color: var(--token-5c696cea-9b0e-49da-8923-0dc909c3e527, #0c1a1d) !important;
+  color: #ffffff !important;
+}
+
+body:not(.nav-in-hero) .framer-1d4lrse p,
+body:not(.nav-in-hero) [data-framer-name="Book Button"] p {
+  color: #ffffff !important;
+  --extracted-r6o4lv: #ffffff !important;
+}

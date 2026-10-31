@@ -1500,5 +1500,58 @@
         closeLegal();
       }
     });
+
+    // 12. Dynamic Hero Transparent Navbar (1:1 Original Aveline Studio Mechanics)
+    (function initHeroNavbar() {
+      var navContainer = document.querySelector('.framer-xz9jp0-container');
+      var solidWrapper = document.querySelector('.framer-Fv60p');
+      var bar = document.querySelector('.framer-1mwbh4g');
+      var heroCard = document.querySelector('.framer-1jm03qa') || document.querySelector('[data-framer-name="Hero"]');
+      var logoImg = document.querySelector('.framer-1hknmid img');
+      var whiteLogoSrc = './assets/YRTy2NxOkfcVHGa80qEHJySIPaY_4eedcb44.svg';
+      var darkLogoSrc = './assets/nCxPVkNYSQdYDt5mXEqXIlRVyKA_f3dd68ce.svg';
+
+      function updateNavState() {
+        var barHeight = bar ? bar.offsetHeight : 72;
+        var inHero = false;
+
+        if (heroCard) {
+          var rect = heroCard.getBoundingClientRect();
+          // Navbar is transparent while inside the hero card
+          inHero = rect.bottom > barHeight;
+        } else {
+          inHero = window.scrollY < 650;
+        }
+
+        if (inHero) {
+          document.body.classList.add('nav-in-hero');
+          if (navContainer) navContainer.classList.add('nav-in-hero');
+          if (bar) bar.classList.add('nav-in-hero');
+          if (solidWrapper) solidWrapper.setAttribute('data-framer-name', 'Over');
+          if (logoImg && logoImg.getAttribute('src') !== whiteLogoSrc) {
+            logoImg.setAttribute('src', whiteLogoSrc);
+          }
+        } else {
+          document.body.classList.remove('nav-in-hero');
+          if (navContainer) navContainer.classList.remove('nav-in-hero');
+          if (bar) bar.classList.remove('nav-in-hero');
+          if (solidWrapper) solidWrapper.setAttribute('data-framer-name', 'Solid');
+          if (logoImg && logoImg.getAttribute('src') !== darkLogoSrc) {
+            logoImg.setAttribute('src', darkLogoSrc);
+          }
+        }
+      }
+
+      // Initial execution
+      updateNavState();
+
+      // Scroll and resize events with passive listeners
+      window.addEventListener('scroll', updateNavState, { passive: true });
+      window.addEventListener('resize', updateNavState, { passive: true });
+      document.addEventListener('scroll', updateNavState, { passive: true });
+
+      // Re-check after images/layout finish loading
+      window.addEventListener('load', updateNavState);
+    })();
   }
 })();
