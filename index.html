@@ -1,4 +1,5 @@
 <html class="lenis" data-f-id="fnode-1" dir="ltr" lang="en-US"><head data-f-id="fnode-2">
+<base href="/" />
 <meta charset="utf-8" data-f-id="fnode-3"/>
 <meta content="width=device-width" data-f-id="fnode-4" name="viewport"/>
 <meta content="Framer 2509ebe" data-f-id="fnode-5" name="generator"/>
@@ -354,13 +355,125 @@ diagnostics</p></div></div><div class="framer-1bih3yr" data-border="true" data-f
 <style data-f-id="fnode-2464">html.lenis,html.lenis body{height:auto}.lenis.lenis-smooth{scroll-behavior:auto!important}.lenis.lenis-smooth [data-lenis-prevent]{overscroll-behavior:contain}.lenis.lenis-stopped{overflow:hidden}</style>
 <script id="dynamic-personalization">
   (function() {
-    // 0. Parse incoming Chameleon URL parameters
+    // Presets for Verified High-Ticket Clinic Partners
+    const PRESETS = {
+      "aura": {
+        name: "Aura Dentistry",
+        city: "Glasgow",
+        treat: "Full-Arch Implants, APEX Invisalign & Composite Bonding",
+        reviews: "160+",
+        book: "https://wa.me/447742089254"
+      },
+      "one80": {
+        name: "One80 Dental",
+        city: "Sheffield",
+        treat: "Specialist Prosthodontics, Dental Implants & Smile Rehabilitation",
+        reviews: "140+",
+        book: "https://wa.me/447751929604"
+      },
+      "mayfield": {
+        name: "Mayfield Dental",
+        city: "Croydon, London",
+        treat: "Composite Bonding, Invisalign & Emergency Dentistry",
+        reviews: "190+",
+        book: "https://wa.me/447891578648"
+      },
+      "nursmiles": {
+        name: "Nur Smiles",
+        city: "Northwood, London",
+        treat: "All-on-4 Dental Implants, Porcelain Veneers & Invisalign",
+        reviews: "120+",
+        book: "https://wa.me/447411905147"
+      },
+      "stvincent": {
+        name: "St Vincent Smile",
+        city: "Glasgow",
+        treat: "Invisalign, Composite Bonding & Dental Implants",
+        reviews: "250+",
+        book: "https://wa.me/447761066850"
+      },
+      "mismile": {
+        name: "The MiSmile Network",
+        city: "Birmingham",
+        treat: "Invisalign Diamond Apex & Digital Smile Makeovers",
+        reviews: "4,000+",
+        book: "https://wa.me/447904365072"
+      },
+      "clearsmiles": {
+        name: "Clear Smiles Wolverhampton",
+        city: "Wolverhampton",
+        treat: "Composite Bonding, Porcelain Veneers & Teeth Whitening",
+        reviews: "150+",
+        book: "https://wa.me/447938389898"
+      },
+      "waterside": {
+        name: "The Waterside Dental Clinic",
+        city: "Preston",
+        treat: "Dental Implants, Invisalign & Cosmetic Veneers",
+        reviews: "220+",
+        book: "https://waterside.dental/"
+      },
+      "hamilton": {
+        name: "Hamilton Smile Studios",
+        city: "Hamilton",
+        treat: "Clear Aligners, Cosmetic Bonding & Dental Implants",
+        reviews: "180+",
+        book: "https://www.hamiltonsmilestudios.co.uk/"
+      },
+      "edwardbyrne": {
+        name: "Edward Byrne Associates",
+        city: "Bedford",
+        treat: "Dental Implants, Periodontics & Orthodontics",
+        reviews: "130+",
+        book: "https://www.edwardbyrne.com/"
+      },
+      "smilewhite": {
+        name: "Smile White",
+        city: "Leeds & London",
+        treat: "Clear Aligners & Professional Teeth Whitening",
+        reviews: "3,500+",
+        book: "https://www.smilewhite.co.uk/pages/clear-aligned-ga"
+      },
+      "ogdental": {
+        name: "OG Dental Clinic",
+        city: "Izmir",
+        treat: "All-on-4 Implants, Zirconia Crowns & Hollywood Smiles",
+        reviews: "500+",
+        book: "https://wa.me/491783233900"
+      },
+      "nordesthetics": {
+        name: "Nordesthetics Clinic",
+        city: "Kaunas",
+        treat: "Dental Implants, Aesthetic Surgery & Smile Makeovers",
+        reviews: "1,800+",
+        book: "https://www.nordesthetics.com/en/contact-us/"
+      }
+    };
+
+    // Aliases
+    PRESETS["auradentistry"] = PRESETS["aura"];
+    PRESETS["one80dental"] = PRESETS["one80"];
+    PRESETS["nur-smiles"] = PRESETS["nursmiles"];
+    PRESETS["st-vincent"] = PRESETS["stvincent"];
+    PRESETS["clearsmileswolverhampton"] = PRESETS["clearsmiles"];
+    PRESETS["mismilenetwork"] = PRESETS["mismile"];
+
+    // 0. Extract slug from URL path (e.g. /aura or /for/aura) or query param (?p=aura or ?client=aura or ?for=aura)
+    const rawPath = window.location.pathname.replace(/^\/+|\/+$/g, '');
+    const pathSegments = rawPath ? rawPath.split('/').filter(Boolean) : [];
+    const pathSlug = pathSegments.length > 0 && pathSegments[0] !== 'index.html' ? pathSegments[pathSegments.length - 1].toLowerCase() : null;
+
     const p = new URLSearchParams(window.location.search);
-    const name = p.get("name");
-    const city = p.get("city") || "London";
-    const treat = p.get("treat") || "Invisalign, Composite Bonding & Veneers";
-    const reviews = p.get("reviews") || "140+";
-    const bookUrl = p.get("book");
+    const querySlug = (p.get("p") || p.get("client") || p.get("for") || p.get("target") || "").toLowerCase();
+    
+    const activeSlug = querySlug || pathSlug;
+    const preset = activeSlug && PRESETS[activeSlug] ? PRESETS[activeSlug] : null;
+
+    const name = p.get("name") || (preset ? preset.name : null);
+    const city = p.get("city") || (preset ? preset.city : "London");
+    const treat = p.get("treat") || (preset ? preset.treat : "Invisalign, Composite Bonding & Veneers");
+    const reviews = p.get("reviews") || (preset ? preset.reviews : "140+");
+    const bookUrl = p.get("book") || (preset ? preset.book : null);
 
     if (!name) return;
 
