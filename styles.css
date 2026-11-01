@@ -1002,10 +1002,10 @@ html.lenis, html.lenis body { height: auto; }
 [data-f-id="fnode-74"]:hover { opacity: 0.997187 !important; }
 [data-f-id="fnode-77"] { transition: transform 0.329s linear(0.0, 0.0182, 0.0659, 0.1341, 0.2153, 0.3035, 0.3938, 0.4825, 0.5671, 0.6455, 0.7167, 0.7799, 0.8349, 0.8819, 0.9213, 0.9536, 0.9794, 0.9995, 1.0146, 1.0254, 1.0326, 1.0369, 1.0388, 1.0389, 1.0377, 1.0354, 1.0325, 1.0291, 1.0256, 1.0221, 1.0187, 1.0155, 1.0126) !important; }
 [data-f-id="fnode-74"]:hover [data-f-id="fnode-77"] { transform: matrix(0.839093, 0.543988, -0.543988, 0.839093, 0, 0) !important; }
-[data-f-id="fnode-79"] { transition: opacity 0.329s linear(0.0, 0.0182, 0.0659, 0.1341, 0.2153, 0.3035, 0.3938, 0.4825, 0.5671, 0.6455, 0.7167, 0.7799, 0.8349, 0.8819, 0.9213, 0.9536, 0.9794, 0.9995, 1.0146, 1.0254, 1.0326, 1.0369, 1.0388, 1.0389, 1.0377, 1.0354, 1.0325, 1.0291, 1.0256, 1.0221, 1.0187, 1.0155, 1.0126) !important; }
-[data-f-id="fnode-79"]:hover { opacity: 0.992213 !important; }
+
+
 [data-f-id="fnode-81"] { transition: color 0.329s linear(0.0, 0.0182, 0.0659, 0.1341, 0.2153, 0.3035, 0.3938, 0.4825, 0.5671, 0.6455, 0.7167, 0.7799, 0.8349, 0.8819, 0.9213, 0.9536, 0.9794, 0.9995, 1.0146, 1.0254, 1.0326, 1.0369, 1.0388, 1.0389, 1.0377, 1.0354, 1.0325, 1.0291, 1.0256, 1.0221, 1.0187, 1.0155, 1.0126), border-color 0.329s linear(0.0, 0.0182, 0.0659, 0.1341, 0.2153, 0.3035, 0.3938, 0.4825, 0.5671, 0.6455, 0.7167, 0.7799, 0.8349, 0.8819, 0.9213, 0.9536, 0.9794, 0.9995, 1.0146, 1.0254, 1.0326, 1.0369, 1.0388, 1.0389, 1.0377, 1.0354, 1.0325, 1.0291, 1.0256, 1.0221, 1.0187, 1.0155, 1.0126) !important; }
-[data-f-id="fnode-79"]:hover [data-f-id="fnode-81"] { color: rgb(247, 247, 247) !important; border-color: rgb(247, 247, 247) !important; }
+
 [data-f-id="fnode-87"] { transition: background-color 0.329s linear(0.0, 0.0182, 0.0659, 0.1341, 0.2153, 0.3035, 0.3938, 0.4825, 0.5671, 0.6455, 0.7167, 0.7799, 0.8349, 0.8819, 0.9213, 0.9536, 0.9794, 0.9995, 1.0146, 1.0254, 1.0326, 1.0369, 1.0388, 1.0389, 1.0377, 1.0354, 1.0325, 1.0291, 1.0256, 1.0221, 1.0187, 1.0155, 1.0126) !important; }
 [data-f-id="fnode-87"]:hover { background-color: rgb(221, 236, 236) !important; }
 [data-f-id="fnode-89"] { transition: color 0.329s linear(0.0, 0.0182, 0.0659, 0.1341, 0.2153, 0.3035, 0.3938, 0.4825, 0.5671, 0.6455, 0.7167, 0.7799, 0.8349, 0.8819, 0.9213, 0.9536, 0.9794, 0.9995, 1.0146, 1.0254, 1.0326, 1.0369, 1.0388, 1.0389, 1.0377, 1.0354, 1.0325, 1.0291, 1.0256, 1.0221, 1.0187, 1.0155, 1.0126), border-color 0.329s linear(0.0, 0.0182, 0.0659, 0.1341, 0.2153, 0.3035, 0.3938, 0.4825, 0.5671, 0.6455, 0.7167, 0.7799, 0.8349, 0.8819, 0.9213, 0.9536, 0.9794, 0.9995, 1.0146, 1.0254, 1.0326, 1.0369, 1.0388, 1.0389, 1.0377, 1.0354, 1.0325, 1.0291, 1.0256, 1.0221, 1.0187, 1.0155, 1.0126) !important; }
@@ -1264,3 +1264,22 @@ body:not(.nav-in-hero) [data-framer-name="Book Button"] p {
 
 /* Watermark Suppression */
 .framer-1rcimp6-container, [aria-label*="Visuvate"], [href*="visuvate.com"], [data-f-id="fnode-1930"], [data-f-id="fnode-1931"], [data-f-id="fnode-1932"] { display: none !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; width: 0 !important; height: 0 !important; }
+
+/* Contact Button Navbar Glitch Fix */
+.framer-yn73n5 a[data-framer-name="Contact"],
+[data-f-id="fnode-78"],
+[data-f-id="fnode-79"],
+[data-f-id="fnode-80"],
+.framer-1gk38vc,
+.framer-1gk38vc div,
+.framer-1gk38vc p {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+.framer-yn73n5 a {
+  opacity: 0.74 !important;
+  transition: opacity 0.2s ease !important;
+}
+.framer-yn73n5 a:hover {
+  opacity: 1 !important;
+}

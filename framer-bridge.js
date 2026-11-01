@@ -108,7 +108,7 @@
     ];
     var currentHeroIdx = 0;
     var heroButtons = document.querySelectorAll('#hero [data-framer-name="Ghost"], .framer-59oil5 button');
-    if (heroButtons.length >= 2) {
+    if (false && heroButtons.length >= 2) {
       var prevHeroBtn = heroButtons[0];
       var nextHeroBtn = heroButtons[1];
       
