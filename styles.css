@@ -1384,12 +1384,12 @@ body:not(.nav-in-hero) [data-framer-name="Book Button"] p {
     width: 100% !important;
   }
 
-  /* Main H1 Headline */
+  /* Main H1 Headline (scaled slightly smaller per user request) */
   .framer-ln3Fs .framer-1aah96d {
-    font-size: clamp(34px, 8.5vw, 44px) !important;
-    --framer-font-size: clamp(34px, 8.5vw, 44px) !important;
-    line-height: 1.05em !important;
-    letter-spacing: -0.035em !important;
+    font-size: clamp(28px, 7vw, 36px) !important;
+    --framer-font-size: clamp(28px, 7vw, 36px) !important;
+    line-height: 1.08em !important;
+    letter-spacing: -0.03em !important;
   }
 
   /* Aside: Subtitle + Dual CTA Buttons Stacked */
@@ -1434,21 +1434,42 @@ body:not(.nav-in-hero) [data-framer-name="Book Button"] p {
     display: inline-flex !important;
   }
 
-  /* Hero primary CTA: Book an appointment */
+  /* Hero primary CTA: Book an appointment with aligned arrow circle */
   [data-f-id="fnode-361"] {
-    min-height: 48px !important;
-    padding: 0 18px !important;
+    height: 52px !important;
+    min-height: 52px !important;
+    padding: 0 6px 0 22px !important;
     background-color: #ffffff !important;
     border-radius: 999px !important;
+    display: inline-flex !important;
     align-items: center !important;
+    justify-content: space-between !important;
+    gap: 12px !important;
+    text-decoration: none !important;
+  }
+
+  /* Arrow circle chip inside hero button */
+  [data-f-id="fnode-364"] {
+    width: 40px !important;
+    height: 40px !important;
+    flex: 0 0 40px !important;
+    border-radius: 999px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 !important;
   }
 
   /* Hero secondary CTA: Explore treatments */
   [data-f-id="fnode-375"] {
-    min-height: 48px !important;
-    padding: 0 18px !important;
+    height: 52px !important;
+    min-height: 52px !important;
+    padding: 0 20px !important;
     border-radius: 999px !important;
+    display: inline-flex !important;
     align-items: center !important;
+    justify-content: center !important;
+    text-decoration: none !important;
   }
 
   /* Bottom treatment tags row */
@@ -1608,7 +1629,141 @@ body:not(.nav-in-hero) [data-framer-name="Book Button"] p {
     gap: 28px !important;
   }
 
-  /* ---- 9. GENERAL GUTTERS (16px) ---- */
+  /* ---- 9. CTA CARD AFTER FAQ: Stacked Layout, No Spill ---- */
+  .framer-ln3Fs .framer-1wu3hs9,
+  [data-f-id="fnode-1841"] {
+    width: 100% !important;
+    height: auto !important;
+    padding: 60px 0px 0px !important;
+  }
+  .framer-E1f6E.framer-bmfp93,
+  [data-f-id="fnode-1845"] {
+    flex-direction: column !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    border-radius: 24px !important;
+    overflow: hidden !important;
+  }
+  .framer-E1f6E .framer-1cag2r9,
+  [data-f-id="fnode-1846"] {
+    flex: 0 0 auto !important;
+    width: 100% !important;
+    height: auto !important;
+    padding: 32px 20px 28px !important;
+  }
+  .framer-E1f6E .framer-q0uh6r,
+  [data-f-id="fnode-1850"] {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+  .framer-E1f6E .framer-wxk9wv,
+  [data-f-id="fnode-1853"] {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+  .framer-E1f6E .framer-1x0xioh,
+  [data-f-id="fnode-1856"] {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 16px !important;
+    width: 100% !important;
+  }
+  .framer-E1f6E .framer-10lces5-container,
+  [data-f-id="fnode-1857"] {
+    width: 100% !important;
+  }
+  .framer-E1f6E [data-f-id="fnode-1858"],
+  .framer-E1f6E .framer-myhdwj {
+    width: 100% !important;
+    justify-content: center !important;
+    min-height: 50px !important;
+    border-radius: 999px !important;
+  }
+  .framer-E1f6E .framer-1j5exqs,
+  [data-f-id="fnode-1869"] {
+    flex: 0 0 auto !important;
+    width: 100% !important;
+    height: 220px !important;
+    position: relative !important;
+  }
+
+  /* ---- 10. FOOTER: Fix Text Spill & 2-Column Links Grid ---- */
+  footer.framer-KQmh5,
+  [data-f-id="fnode-1948"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 44px 0px 24px !important;
+  }
+  .framer-KQmh5 .framer-f4idte,
+  [data-f-id="fnode-1949"] {
+    gap: 32px !important;
+    padding: 0px 16px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .framer-KQmh5 .framer-1287arw,
+  [data-f-id="fnode-1950"] {
+    flex-direction: column !important;
+    gap: 36px !important;
+    width: 100% !important;
+  }
+  .framer-KQmh5 .framer-tuaiuz,
+  [data-f-id="fnode-1951"] {
+    flex: 0 0 auto !important;
+    width: 100% !important;
+    gap: 16px !important;
+  }
+  .framer-KQmh5 .framer-w0nd51 {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .framer-KQmh5 .framer-p3kqaq,
+  [data-f-id="fnode-1991"] {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(10px, 1fr)) !important;
+    gap: 28px 20px !important;
+    width: 100% !important;
+    flex: 0 0 auto !important;
+  }
+  .framer-KQmh5 .framer-sskwwh,
+  .framer-KQmh5 .framer-1islctd,
+  .framer-KQmh5 .framer-1ar1cij,
+  [data-f-id="fnode-1992"],
+  [data-f-id="fnode-2016"],
+  [data-f-id="fnode-2038"] {
+    flex: 0 0 auto !important;
+    width: 100% !important;
+  }
+  .framer-KQmh5 .framer-rnc6kh,
+  .framer-KQmh5 .framer-tkgm7s,
+  .framer-KQmh5 .framer-1p5i9vi {
+    max-width: 100% !important;
+    width: 100% !important;
+    white-space: normal !important;
+  }
+  .framer-KQmh5 .framer-rnc6kh p,
+  .framer-KQmh5 .framer-tkgm7s p,
+  .framer-KQmh5 .framer-1p5i9vi p {
+    white-space: normal !important;
+    word-break: normal !important;
+    line-height: 2 !important;
+  }
+  .framer-KQmh5 .framer-evv2ce,
+  [data-f-id="fnode-2076"] {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+    padding: 20px 0px !important;
+    width: 100% !important;
+  }
+  .framer-KQmh5 .framer-ids0tr,
+  [data-f-id="fnode-2089"] {
+    padding: 12px 0px 0px !important;
+    width: 100% !important;
+  }
+
+  /* ---- 11. GENERAL GUTTERS (16px) ---- */
   .framer-ln3Fs .framer-5845sf,
   .framer-ln3Fs .framer-19pvc37,
   .framer-ln3Fs .framer-g8dc95,
@@ -1617,17 +1772,6 @@ body:not(.nav-in-hero) [data-framer-name="Book Button"] p {
     padding-right: 16px !important;
   }
 
-  /* ---- 10. FOOTER ---- */
-  .framer-ln3Fs .framer-rbih2 {
-    padding: 0px 16px !important;
-    gap: 24px !important;
-  }
-  .framer-ln3Fs .framer-iddiw2 {
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 8px !important;
-    padding: 0px 16px !important;
-  }
 }
 
 /* END MOBILE OPTIMIZATION */
