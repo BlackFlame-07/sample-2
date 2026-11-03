@@ -1643,4 +1643,42 @@
       });
     })();
   }
+
+  /* ==========================================================================
+     14. Zero Third-Party Badges Purge (Dynamic & Static)
+     ========================================================================== */
+  (function initBadgePurge() {
+    var BADGE_SELECTORS = [
+      'a[href*="visuvate"]',
+      '[aria-label*="Visuvate"]',
+      '[aria-label*="visuvate"]',
+      '[data-framer-name*="Visuvate"]',
+      '.framer-40iu5d-container',
+      '.framer-13x6f8r-container',
+      'iframe#__framer-editorbar'
+    ];
+
+    function purgeBadges() {
+      for (var i = 0; i < BADGE_SELECTORS.length; i++) {
+        var elements = document.querySelectorAll(BADGE_SELECTORS[i]);
+        for (var j = 0; j < elements.length; j++) {
+          elements[j].remove();
+        }
+      }
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", purgeBadges);
+    } else {
+      purgeBadges();
+    }
+
+    if (typeof MutationObserver !== "undefined") {
+      var observer = new MutationObserver(function() {
+        purgeBadges();
+      });
+      observer.observe(document.documentElement, { childList: true, subtree: true });
+    }
+  })();
+
 })();

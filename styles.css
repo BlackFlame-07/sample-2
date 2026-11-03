@@ -1855,3 +1855,28 @@ body:not(.nav-in-hero) [data-framer-name="Book Button"] p {
     padding-right: 16px !important;
   }
 }
+
+/* ==========================================================================
+   Zero Third-Party Builder Badges (Desktop & Mobile)
+   ========================================================================== */
+a[href*="visuvate"],
+[aria-label*="Visuvate"],
+[aria-label*="visuvate"],
+[data-framer-name*="Visuvate"],
+.framer-40iu5d-container,
+.framer-13x6f8r-container,
+iframe#__framer-editorbar {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  max-width: 0 !important;
+  max-height: 0 !important;
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
+  z-index: -9999 !important;
+}
+
