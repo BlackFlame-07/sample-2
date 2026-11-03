@@ -1449,25 +1449,20 @@
       var text = btn.innerText.trim();
       var href = btn.getAttribute('href') || '';
 
-      if (text.includes('Consultation') || text.includes('Request time') || text.includes('Book') || text.includes('Appointment') || text.includes('Live availability') || (href === '#contact' && !btn.closest('nav'))) {
+      // Allow natural navigation for subpage routes and dropdown links
+      if (href.startsWith('/') || href.startsWith('./') || btn.closest('.dropdown-panel') || (href.includes('.html') && !href.startsWith('#'))) {
+        return;
+      }
+
+      if (text.includes('Consultation') || text.includes('Request time') || (text.includes('Book') && !href.includes('/book')) || text.includes('Appointment') || text.includes('Live availability') || (href === '#contact' && !btn.closest('nav'))) {
         e.preventDefault();
         openConsultation();
         return;
       }
 
-      if (href.includes('privacy') || text === 'Privacy') {
+      if ((href === '#privacy' || href === '#terms' || href === '#accessibility') && !href.startsWith('/')) {
         e.preventDefault();
-        openLegal('privacy');
-        return;
-      }
-      if (href.includes('terms') || text === 'Terms') {
-        e.preventDefault();
-        openLegal('terms');
-        return;
-      }
-      if (href.includes('accessibility') || text === 'Accessibility') {
-        e.preventDefault();
-        openLegal('accessibility');
+        openLegal(href.replace('#', ''));
         return;
       }
     });
@@ -1552,6 +1547,100 @@
 
       // Re-check after images/layout finish loading
       window.addEventListener('load', updateNavState);
+    })();
+
+    // 13. Unified Desktop Dropdowns Engine
+    (function initNavbarDropdowns() {
+      var navContainer = document.querySelector('.framer-xz9jp0-container');
+      if (!navContainer) return;
+
+      var dropdownContainer = navContainer.querySelector('[data-framer-name="Dropdowns"]');
+      if (!dropdownContainer) return;
+
+      var panels = dropdownContainer.querySelectorAll('.dropdown-panel');
+      var navLinks = navContainer.querySelectorAll('[data-framer-name="Bar"] a');
+      var closeTimer = null;
+
+      function showDropdown(name) {
+        if (closeTimer) {
+          clearTimeout(closeTimer);
+          closeTimer = null;
+        }
+
+        var found = false;
+        panels.forEach(function(p) {
+          var pName = p.getAttribute('data-panel');
+          if (pName === name) {
+            p.style.display = 'flex';
+            p.style.opacity = '1';
+            p.style.transform = 'translateY(0)';
+            found = true;
+          } else {
+            p.style.display = 'none';
+            p.style.opacity = '0';
+            p.style.transform = 'translateY(-6px)';
+          }
+        });
+
+        navLinks.forEach(function(l) {
+          var lName = (l.getAttribute('data-framer-name') || '').toLowerCase();
+          l.classList.toggle('has-dropdown-active', lName === name);
+        });
+
+        if (found) {
+          dropdownContainer.classList.add('is-open');
+        }
+      }
+
+      function scheduleCloseDropdown() {
+        if (closeTimer) clearTimeout(closeTimer);
+        closeTimer = setTimeout(function() {
+          dropdownContainer.classList.remove('is-open');
+          panels.forEach(function(p) {
+            p.style.opacity = '0';
+            p.style.transform = 'translateY(-6px)';
+            setTimeout(function() {
+              if (!dropdownContainer.classList.contains('is-open')) {
+                p.style.display = 'none';
+              }
+            }, 200);
+          });
+          navLinks.forEach(function(l) {
+            l.classList.remove('has-dropdown-active');
+          });
+        }, 220);
+      }
+
+      navLinks.forEach(function(link) {
+        var name = (link.getAttribute('data-framer-name') || '').toLowerCase();
+        if (['treatments', 'specialists', 'studio', 'journal'].indexOf(name) !== -1) {
+          link.addEventListener('mouseenter', function() {
+            showDropdown(name);
+          });
+          link.addEventListener('mouseleave', function() {
+            scheduleCloseDropdown();
+          });
+        } else {
+          link.addEventListener('mouseenter', function() {
+            scheduleCloseDropdown();
+          });
+        }
+      });
+
+      dropdownContainer.addEventListener('mouseenter', function() {
+        if (closeTimer) {
+          clearTimeout(closeTimer);
+          closeTimer = null;
+        }
+      });
+
+      dropdownContainer.addEventListener('mouseleave', function() {
+        scheduleCloseDropdown();
+      });
+
+      navContainer.addEventListener('mouseleave', function() {
+        scheduleCloseDropdown();
+      });
     })();
   }
 })();

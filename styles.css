@@ -1775,3 +1775,51 @@ body:not(.nav-in-hero) [data-framer-name="Book Button"] p {
 }
 
 /* END MOBILE OPTIMIZATION */
+
+/* =========================================================================
+   Unified Navbar Dropdowns Engine (Interactive Hover & Touch)
+   ========================================================================= */
+.framer-15eukk7[data-framer-name="Dropdowns"] {
+  height: 0px !important;
+  max-height: 0px !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  overflow: hidden !important;
+  transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1), transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), max-height 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  transform: translateY(-4px) !important;
+  will-change: transform, opacity, max-height !important;
+  backdrop-filter: blur(24px) !important;
+  -webkit-backdrop-filter: blur(24px) !important;
+  background-color: rgba(243, 245, 244, 0.96) !important;
+  border-bottom-left-radius: 28px !important;
+  border-bottom-right-radius: 28px !important;
+  box-shadow: 0 24px 48px -12px rgba(5, 20, 24, 0.15), 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+  z-index: 99 !important;
+}
+
+.framer-15eukk7[data-framer-name="Dropdowns"].is-open {
+  height: auto !important;
+  max-height: 850px !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  overflow: visible !important;
+  transform: translateY(0) !important;
+}
+
+.dropdown-panel {
+  width: 100% !important;
+}
+
+.dropdown-panel a {
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+.dropdown-panel a:hover {
+  opacity: 0.75;
+}
+
+[data-framer-name="Links"] a svg {
+  transition: transform 0.25s ease;
+}
+[data-framer-name="Links"] a.has-dropdown-active svg {
+  transform: rotate(180deg);
+}
