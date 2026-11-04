@@ -192,7 +192,7 @@
       });
     }
 
-        // 8. Specialists Doctor Tabs (100% Exact OG Aveline Studio Specialists)
+        // 8. Specialists Doctor Tabs (100% Exact Clinical Specialists Directory)
     var specialistsData = [
       {
         name: 'Dr. Elena Varga',
@@ -1496,7 +1496,7 @@
       }
     });
 
-    // 12. Dynamic Hero Transparent Navbar (1:1 Original Aveline Studio Mechanics)
+    // 12. Dynamic Hero Transparent Navbar (1:1 Transparent Header Mechanics)
     (function initHeroNavbar() {
       var navContainer = document.querySelector('.framer-xz9jp0-container');
       var solidWrapper = document.querySelector('.framer-Fv60p');

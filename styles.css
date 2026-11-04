@@ -1091,7 +1091,7 @@ html.lenis, html.lenis body { height: auto; }
 
 
 /* ==========================================================================
-   DYNAMIC HERO TRANSPARENT NAVBAR (1:1 Original Aveline Framer Mechanics)
+   DYNAMIC HERO TRANSPARENT NAVBAR (1:1 Original Modern Architecture Mechanics)
    ========================================================================== */
 
 /* Base transition properties for buttery-smooth state crossfade */
@@ -1286,7 +1286,7 @@ body:not(.nav-in-hero) [data-framer-name="Book Button"] p {
 
 
 /* ==========================================================================
-   MOBILE UX/UI OPTIMIZATION — Aveline Dental Studio
+   MOBILE UX/UI OPTIMIZATION — Apex Dental Studio
    All rules scoped to @media (max-width: 809.98px)
    Desktop (≥ 810px) is completely untouched.
    ========================================================================== */
@@ -1832,10 +1832,21 @@ body:not(.nav-in-hero) [data-framer-name="Book Button"] p {
     display: flex !important;
     flex-direction: column !important;
     gap: 16px !important;
+    width: 100% !important;
+  }
+  .framer-1kxsssn > div,
+  .framer-qn5beb,
+  .framer-1lfbjo7,
+  .framer-1kxsssn h1 {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex-basis: auto !important;
   }
   .framer-1kxsssn h1 {
     font-size: 38px !important;
     line-height: 1.1em !important;
+    white-space: normal !important;
+    word-break: break-word !important;
   }
   .framer-10ctoyd {
     display: flex !important;
