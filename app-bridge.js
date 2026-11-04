@@ -1515,7 +1515,8 @@
           // Navbar is transparent while inside the hero card
           inHero = rect.bottom > barHeight;
         } else {
-          inHero = window.scrollY < 650;
+          // Subpages without a hero card should always remain in solid solid-nav state
+          inHero = false;
         }
 
         if (inHero) {
