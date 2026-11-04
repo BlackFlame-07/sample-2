@@ -102,9 +102,9 @@
 
     // 5. Hero Carousel Controls
     var heroSlides = [
-      { src: './assets/svs_clinic_wide_5k.jpg', pos: 'center center' },
-      { src: './assets/ZAe2RSeRRvptuPbcksJup5EdVE_6a3cf915.webp', pos: 'center center' },
-      { src: './assets/hkCLvVNbVvxFIG5ODVbe6sk_56529734.webp', pos: 'center center' }
+      { src: '/assets/svs_clinic_wide_5k.jpg', pos: 'center center' },
+      { src: '/assets/ZAe2RSeRRvptuPbcksJup5EdVE_6a3cf915.webp', pos: 'center center' },
+      { src: '/assets/hkCLvVNbVvxFIG5ODVbe6sk_56529734.webp', pos: 'center center' }
     ];
     var currentHeroIdx = 0;
     var heroButtons = document.querySelectorAll('#hero [data-framer-name="Ghost"], .framer-59oil5 button');
@@ -197,7 +197,7 @@
       {
         name: 'Dr. Elena Varga',
         role: 'Cosmetic dentistry',
-        photo: './assets/LhRdrbEme10eLb0FCf78WEGE_dr_varga.webp',
+        photo: '/assets/LhRdrbEme10eLb0FCf78WEGE_dr_varga.webp',
         alt: 'Dr. Elena Varga · Cosmetic dentistry',
         bio: 'Elena leads our cosmetic work, from whitening to full veneer cases. She plans every smile digitally first, so you can see the result before a single tooth is touched.',
         experience: '12 years',
@@ -209,7 +209,7 @@
       {
         name: 'Dr. Daniel Costa',
         role: 'Orthodontics',
-        photo: './assets/i9YV55qg35geFijtWVbcSvyZI_dr_costa.webp',
+        photo: '/assets/i9YV55qg35geFijtWVbcSvyZI_dr_costa.webp',
         alt: 'Dr. Daniel Costa · Orthodontics',
         bio: 'Daniel has straightened more than 1,400 smiles with clear aligners and fixed braces. He is known for realistic timelines and very few surprise extra stages.',
         experience: '9 years',
@@ -221,7 +221,7 @@
       {
         name: 'Dr. Sofia Reyes',
         role: "Children's dentistry",
-        photo: './assets/TjZGJmXA2itrXL8hlBEh6zV8PA_dr_reyes.webp',
+        photo: '/assets/TjZGJmXA2itrXL8hlBEh6zV8PA_dr_reyes.webp',
         alt: "Dr. Sofia Reyes · Children's dentistry",
         bio: 'Sofia makes first visits fun and fear-free. Children see her from their first tooth through their teens, with parents in the room for every appointment.',
         experience: '7 years',
@@ -233,7 +233,7 @@
       {
         name: 'Dr. Ryan Okafor',
         role: 'Implants & surgery',
-        photo: './assets/guZzPzCD5moyy6x2UlwrIWlV1yI_dr_okafor.webp',
+        photo: '/assets/guZzPzCD5moyy6x2UlwrIWlV1yI_dr_okafor.webp',
         alt: 'Dr. Ryan Okafor · Implants & surgery',
         bio: 'Ryan places implants with guided surgery, planned from a 3D scan of your jaw. Most patients return to work the next day with a temporary tooth in place.',
         experience: '15 years',
@@ -866,7 +866,7 @@
           
           <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid #eaeeed;">
             <div style="display: flex; align-items: center; gap: 12px;">
-              <img src="./assets/svs_logo_navy.png" style="height: 24px; display: block;" alt="St Vincent Smile">
+              <img src="/assets/svs_logo_navy.png" style="height: 24px; display: block;" alt="St Vincent Smile">
               <span style="font-family: 'Geist Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: #0e5a66; background: #dcebeb; padding: 4px 10px; border-radius: 999px; font-weight: 500;">Finnieston, Glasgow G3 8LH</span>
             </div>
             <span style="font-size: 11.5px; color: #1f2d31; display: flex; align-items: center; gap: 6px; font-weight: 500;">
@@ -891,22 +891,22 @@
             <label style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: #303d42; font-weight: 500; display: block; margin-bottom: 8px;">Select Clinician / Dentist</label>
             <div class="svs-doctor-select-row" id="nord-doc-selector">
               <div class="svs-doc-pill active" data-doctor="Dr. Elena Varga">
-                <img src="./assets/LhRdrbEme10eLb0FCf78WEGE_dr_varga.webp" style="width: 22px; height: 22px; border-radius: 50%; object-fit: cover; object-position: center 20%; flex-shrink: 0;" alt="Dr. Elena Varga" />
+                <img src="/assets/LhRdrbEme10eLb0FCf78WEGE_dr_varga.webp" style="width: 22px; height: 22px; border-radius: 50%; object-fit: cover; object-position: center 20%; flex-shrink: 0;" alt="Dr. Elena Varga" />
                 <span class="doc-dot"></span>
                 <span>Dr. Elena Varga (Cosmetic Dentistry)</span>
               </div>
               <div class="svs-doc-pill" data-doctor="Dr. Daniel Costa">
-                <img src="./assets/i9YV55qg35geFijtWVbcSvyZI_dr_costa.webp" style="width: 22px; height: 22px; border-radius: 50%; object-fit: cover; object-position: center 20%; flex-shrink: 0;" alt="Dr. Daniel Costa" />
+                <img src="/assets/i9YV55qg35geFijtWVbcSvyZI_dr_costa.webp" style="width: 22px; height: 22px; border-radius: 50%; object-fit: cover; object-position: center 20%; flex-shrink: 0;" alt="Dr. Daniel Costa" />
                 <span class="doc-dot"></span>
                 <span>Dr. Daniel Costa (Orthodontics & Aligners)</span>
               </div>
               <div class="svs-doc-pill" data-doctor="Dr. Sofia Reyes">
-                <img src="./assets/TjZGJmXA2itrXL8hlBEh6zV8PA_dr_reyes.webp" style="width: 22px; height: 22px; border-radius: 50%; object-fit: cover; object-position: center 20%; flex-shrink: 0;" alt="Dr. Sofia Reyes" />
+                <img src="/assets/TjZGJmXA2itrXL8hlBEh6zV8PA_dr_reyes.webp" style="width: 22px; height: 22px; border-radius: 50%; object-fit: cover; object-position: center 20%; flex-shrink: 0;" alt="Dr. Sofia Reyes" />
                 <span class="doc-dot"></span>
                 <span>Dr. Sofia Reyes (Pediatric & Family Care)</span>
               </div>
               <div class="svs-doc-pill" data-doctor="Dr. Ryan Okafor">
-                <img src="./assets/guZzPzCD5moyy6x2UlwrIWlV1yI_dr_okafor.webp" style="width: 22px; height: 22px; border-radius: 50%; object-fit: cover; object-position: center 20%; flex-shrink: 0;" alt="Dr. Ryan Okafor" />
+                <img src="/assets/guZzPzCD5moyy6x2UlwrIWlV1yI_dr_okafor.webp" style="width: 22px; height: 22px; border-radius: 50%; object-fit: cover; object-position: center 20%; flex-shrink: 0;" alt="Dr. Ryan Okafor" />
                 <span class="doc-dot"></span>
                 <span>Dr. Ryan Okafor (Implants & Guided Surgery)</span>
               </div>
@@ -1145,7 +1145,7 @@
         <div class="svs-modal-card">
           <button class="svs-modal-close" id="nord-close-legal">&times;</button>
           <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
-            <img src="./assets/svs_logo_navy.png" style="height: 24px; display: block;" alt="St Vincent Smile">
+            <img src="/assets/svs_logo_navy.png" style="height: 24px; display: block;" alt="St Vincent Smile">
             <span style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; font-family: 'Geist Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: #0e5a66; background: #dcebeb; padding: 4px 10px; border-radius: 999px; font-weight: 500;">Scottish Healthcare & Clinical Governance</span>
           </div>
           
@@ -1503,8 +1503,8 @@
       var bar = document.querySelector('.framer-1mwbh4g');
       var heroCard = document.querySelector('.framer-1jm03qa') || document.querySelector('[data-framer-name="Hero"]');
       var logoImg = document.querySelector('.framer-1hknmid img');
-      var whiteLogoSrc = './assets/YRTy2NxOkfcVHGa80qEHJySIPaY_4eedcb44.svg';
-      var darkLogoSrc = './assets/nCxPVkNYSQdYDt5mXEqXIlRVyKA_f3dd68ce.svg';
+      var whiteLogoSrc = '/assets/YRTy2NxOkfcVHGa80qEHJySIPaY_4eedcb44.svg';
+      var darkLogoSrc = '/assets/nCxPVkNYSQdYDt5mXEqXIlRVyKA_f3dd68ce.svg';
 
       function updateNavState() {
         var barHeight = bar ? bar.offsetHeight : 72;
