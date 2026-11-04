@@ -13,14 +13,14 @@ if (projectId && hostInfo.scopeCanvas) {
 }
 const bootstrap = {
 	services: {
-		api: "https://api.framer.com",
-		app: "https://framer.com",
+		api: "https://api.apexdentalstudio.com",
+		app: "https://apexdentalstudio.com",
 		canvas,
-		events: "https://events.framer.com",
-		login: "https://framer.com/login",
+		events: "https://events.apexdentalstudio.com",
+		login: "https://apexdentalstudio.com/login",
 		userContent: "https://framerusercontent.com",
 		modulesCDN: "https://framerusercontent.com/modules",
-		modulesShortLink: "https://framer.com/m",
+		modulesShortLink: "https://apexdentalstudio.com/m",
 		previewDomain: "framer.app",
 	},
 	hostInfo: {
